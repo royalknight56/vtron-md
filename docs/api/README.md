@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2021-08-20 17:33:44
+ * @LastEditTime: 2021-08-25 15:34:57
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/api/README.md
 -->
@@ -62,7 +62,9 @@ ClearDesktop()
 ```js
 import {DragWindow} from 'vue3-win10'
 import Help from './apps/Help.vue';
-new DragWindow(100,100,'关于',200,100,{content:Help})
+import appicon from "./assets/appicon.png"
+
+new DragWindow(100,100,'关于',appicon,200,100,{content:Help})
 
 ```
 
@@ -74,7 +76,7 @@ interface ctxPar{
     props?:any
 }
 
-DragWindow(x:number,y:number,title:string,width:number,height:number,ctxpar:ctxPar,use:Array)
+DragWindow(x:number,y:number,title:string,icon:string|null,width:number,height:number,ctxpar:ctxPar,use:Array)
 
 ```
 
@@ -83,6 +85,7 @@ DragWindow(x:number,y:number,title:string,width:number,height:number,ctxpar:ctxP
 | x  | 左上角位置坐标x |
 | y  | 左上角位置坐标y |
 | title  | 窗口名称 |
+| icon  | 窗口图标 |
 | width  | 窗口宽度 |
 | height  | 窗口高度 |
 | app  | 窗口的选项 |
@@ -97,7 +100,7 @@ ctxPar:{
 
 usage:
 ```js
-new DragWindow(0, 0, 'Admin后台管理', 300, 400, { content: AdmVue }, [ElementPlus])
+new DragWindow(0, 0, 'Admin后台管理',appicon, 300, 400, { content: AdmVue }, [ElementPlus])
 ```
 
 ### MenuIPC
@@ -185,6 +188,7 @@ interface PageItem {
     ifMax:boolean,
     width:number,
     height:number,
+    icon:string,
     content:DefineComponent<{}, {}, any>,
     props:any,
     appPointer: App|null

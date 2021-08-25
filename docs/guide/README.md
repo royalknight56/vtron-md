@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2021-08-20 18:31:46
+ * @LastEditTime: 2021-08-25 15:36:53
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/guide/README.md
 -->
@@ -106,7 +106,7 @@ import { AddToDesktop, ClearDesktop } from "vue3-win10";
 
 ```ts
 import Test1 from "./apps/Test1.vue"
-import computer from "./assets/computer.ico"
+import computericon from "./assets/computer.ico"
 ```
 
 之后使用 函数将应用添加到桌面，之后点击桌面到图标就会打开刚才写好到vue组件
@@ -115,7 +115,7 @@ import computer from "./assets/computer.ico"
 AddToDesktop({
   name: '我的电脑',
   apptemp: 'Test1',
-  icon: computer,
+  icon: computericon,
   width: 400,
   height: 400,
   tmp: Test1
@@ -132,7 +132,7 @@ AddToDesktop({
 创建一个类的实例，就可以创建新的窗口
 
 ```ts
-new DragWindow(0, 0, 'Admin后台管理', 300, 400, { content: AdmVue},[ElementPlus])
+new DragWindow(0, 0, 'Admin后台管理',computericon, 300, 400, { content: AdmVue},[ElementPlus])
 ```
 参数分别是
 |  名称   | 含义  |
@@ -140,6 +140,7 @@ new DragWindow(0, 0, 'Admin后台管理', 300, 400, { content: AdmVue},[ElementP
 | x  | 左上角位置坐标x |
 | y  | 左上角位置坐标y |
 | title  | 窗口名称 |
+| icon  | 窗口图标 |
 | width  | 窗口宽度 |
 | height  | 窗口高度 |
 | app  | 窗口的选项 |
