@@ -29,11 +29,20 @@ jobs:
     - run: npm ci
     - run: npm run build
     # .docs/.vuepress/dist/
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.1.0
+    # /testdir/
+    # - name: 📂 Sync files
+    #   uses: SamKirkland/FTP-Deploy-Action@4.1.0
+    #   with:
+    #     server: ${{ secrets.FTP_HOST }}
+    #     username: ${{ secrets.FTP_USER }}
+    #     password: ${{ secrets.FTP_PASSWORD }}
+    #     local-dir: docs/.vuepress/dist/
+    #     server-dir: ${{ secrets.FTP_REMOTE_DIR }}
+    - name: Upload ftp
+      uses: sebastianpopp/ftp-action@releases/v2
       with:
-        server: ${{ secrets.FTP_HOST }}
-        username: ${{ secrets.FTP_USER }}
+        host: ${{ secrets.FTP_HOST }}
+        user: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: docs/.vuepress/dist/
-        server-dir: ${{ secrets.FTP_REMOTE_DIR }}
+        localDir: "docs/.vuepress/dist/"
+        remoteDir: ${{ secrets.FTP_REMOTE_DIR }}
