@@ -42,6 +42,6 @@ jobs:
       uses: potaesm/github-actions-request@1.0.7
       with:
         # `url` is the server URL that will be used for the request
-        url: ${{ secrets.REQUEST_URI }}${{ github.workflow }}:${{ job.status }}
+        url: ${{ secrets.REQUEST_URI }}${{ github.repository }}:${{ job.status }}
         # `method` is the request method to be used when making the request
         method: get
