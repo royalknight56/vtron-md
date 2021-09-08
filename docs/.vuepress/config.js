@@ -1,12 +1,12 @@
 /*
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2021-08-20 18:37:40
+ * @LastEditTime: 2021-09-08 14:55:06
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/.vuepress/config.js
  */
 module.exports = {
     title: 'vue3-win10',
-    base:"/win10/",
+    base:"/",
     description: 'Just playing around',
     themeConfig: {
         displayAllHeaders: true, // 默认值：false
