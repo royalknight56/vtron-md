@@ -28,16 +28,6 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build
-    # docs/.vuepress/dist/
-    # /testdir/
-    # - name: 📂 Sync files
-    #   uses: SamKirkland/FTP-Deploy-Action@4.1.0
-    #   with:
-    #     server: ${{ secrets.FTP_HOST }}
-    #     username: ${{ secrets.FTP_USER }}
-    #     password: ${{ secrets.FTP_PASSWORD }}
-    #     local-dir: docs/.vuepress/dist/
-    #     server-dir: ${{ secrets.FTP_REMOTE_DIR }}
     - name: Deploy to Staging server
       uses: easingthemes/ssh-deploy@main
       env:
@@ -45,4 +35,4 @@ jobs:
         SOURCE: "docs/.vuepress/dist/"
         REMOTE_HOST: ${{ secrets.DEPLOY_HOST }}
         REMOTE_USER: ${{ secrets.DEPLOY_USER }}
-        TARGET: '/www/wwwroot/testdir/'
+        TARGET: ${{ secrets.DEPLOY_REMOTE_DIR }}
