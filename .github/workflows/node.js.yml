@@ -28,12 +28,12 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build
-
+    # .docs/.vuepress/dist/
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.1.0
       with:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ${{ secrets.FTP_LOCAL_DIR }}
+        local-dir: docs/.vuepress/dist/
         server-dir: ${{ secrets.FTP_REMOTE_DIR }}
