@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2021-08-25 15:34:57
+ * @LastEditTime: 2021-09-09 11:09:02
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/api/README.md
 -->
@@ -21,7 +21,6 @@
 ```ts
 interface appInfo{
     name: string,
-    apptemp: string,
     icon:string,
     width:number,
     height:number,
@@ -35,7 +34,6 @@ AddToDesktop(app:appInfo)
 ```ts
 appInfo:{
     name: 标题,
-    apptemp: --已废弃属性--,
     icon:图标素材,
     width:窗口打开宽度,
     height:窗口打开高度,

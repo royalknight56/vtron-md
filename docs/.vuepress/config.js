@@ -1,6 +1,6 @@
 /*
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2021-09-08 14:55:06
+ * @LastEditTime: 2021-09-09 11:06:43
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/.vuepress/config.js
  */
@@ -15,6 +15,7 @@ module.exports = {
             { text: '主页', link: '/' },
             { text: '教程', link: '/guide/' },
             { text: 'API', link: '/api/' },
+            { text: '更新', link: '/update/' },
             { text: 'GitHub', link: 'https://github.com/royalknight56/vue-windows10' },
             { text: 'Demo', link: 'http://myim.online' },
         ],

@@ -1,13 +1,12 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2021-08-25 15:36:53
+ * @LastEditTime: 2021-09-09 11:04:27
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/guide/README.md
 -->
 
 
 <!-- # Usage -->
-
 # 开发流程
 
 ## 安装
@@ -114,7 +113,6 @@ import computericon from "./assets/computer.ico"
 ```ts
 AddToDesktop({
   name: '我的电脑',
-  apptemp: 'Test1',
   icon: computericon,
   width: 400,
   height: 400,
