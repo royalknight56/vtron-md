@@ -1,6 +1,6 @@
 /*
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2021-09-09 11:06:43
+ * @LastEditTime: 2021-09-18 18:26:35
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/.vuepress/config.js
  */
@@ -23,6 +23,7 @@ module.exports = {
         sidebar: {
             '/guide/': 'auto',
             '/api/':'auto',
+            '/update/':'auto',
             '/': [
 
             ]

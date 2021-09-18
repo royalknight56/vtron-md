@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2021-09-09 11:04:27
+ * @LastEditTime: 2021-09-18 17:57:19
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/guide/README.md
 -->
@@ -114,12 +114,10 @@ import computericon from "./assets/computer.ico"
 AddToDesktop({
   name: '我的电脑',
   icon: computericon,
-  width: 400,
-  height: 400,
-  tmp: Test1
+  window: new DragWindow(0, 0, '我的电脑', computericon, 400, 400, { content: Test1 })
 });
 ```
-这里name是应用的名称，icon是应用的图标素材链接，设置width和height来控制打开后的窗口大小。
+这里name是应用的名称，icon是应用的图标素材链接，之后传入window来设置点开后打开的窗口。
 
 这样，运行vue之后，双击桌面的应用图标，就会显示出刚才写好的vue页面。
 
@@ -145,6 +143,8 @@ new DragWindow(0, 0, 'Admin后台管理',computericon, 300, 400, { content: AdmV
 | use  | 需要使用到的插件 |
 
 在app参数项中的content属性传入vue组件，就可以打开以这个组件为内容的窗口
+
+这时，调用对象的show方法，就可以展示出新的窗口
 
 ## 窗口间通信
 

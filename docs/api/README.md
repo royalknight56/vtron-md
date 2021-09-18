@@ -1,10 +1,10 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2021-09-09 11:09:02
+ * @LastEditTime: 2021-09-18 18:36:00
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/api/README.md
 -->
-## Component 组件
+# Component 组件
 
 <span style="color:#999;text-align:center">
 建议在单独页面中加入以下组件
@@ -14,17 +14,15 @@
 <Win10></Win10>
 ```
 
-## Function 函数
+# Function 函数
 
-### AddToDesktop
+## AddToDesktop
 
 ```ts
 interface appInfo{
-    name: string,
-    icon:string,
-    width:number,
-    height:number,
-    tmp:ReturnType<typeof defineComponent>
+    name: string;
+    icon: string;
+    window: DragWindow;
 }
 
 AddToDesktop(app:appInfo)
@@ -35,14 +33,12 @@ AddToDesktop(app:appInfo)
 appInfo:{
     name: 标题,
     icon:图标素材,
-    width:窗口打开宽度,
-    height:窗口打开高度,
-    tmp:引入的Vue文件
+    window:打开的窗口
 }
 
 ```
 
-### ClearDesktop
+## ClearDesktop
 
 ```ts
 ClearDesktop()
@@ -50,9 +46,9 @@ ClearDesktop()
 用于清空桌面图标
 
 
-## Class 类
+# Class 类
 
-### DragWindow
+## DragWindow
 
 引入DragWindow类
 构造对象，使用后会在屏幕上显示一个窗口
@@ -100,8 +96,30 @@ usage:
 ```js
 new DragWindow(0, 0, 'Admin后台管理',appicon, 300, 400, { content: AdmVue }, [ElementPlus])
 ```
+### onWindowResizing
+onWindowResizing(event: (x: number, y: number) => void): void;
+用于监听窗口的大小变化事件
 
-### MenuIPC
+usage:
+
+```ts
+let next = new DragWindow(0, 0, '窗口通信',beatico, 300, 400, { content: AdmVue},[ElementPlus])
+next.show()
+next.onWindowResizing((x,y)=>{ console.log(x,y) })
+```
+
+### show
+show(): void;
+使窗口显示，不调用此函数，则窗口不会显示
+
+usage:
+
+```ts
+let next = new DragWindow(0, 0, '窗口通信',beatico, 300, 400, { content: AdmVue},[ElementPlus])
+next.show()
+```
+
+## MenuIPC
 
 这个类是单例模式，用于管理右键菜单（弹出菜单）。在引入MenuListVue组件后，可以在屏幕上调出菜单
 
@@ -117,7 +135,7 @@ MenuIPC.getInstance():WindowIPC
 
 #### 成员函数：
 
-##### callMenu
+### callMenu
 
 ```ts
 callMenu(x:number,y:number,list:UnwrapNestedRefs<Array<menuItem>>)
@@ -148,7 +166,7 @@ MenuIPC.getInstance().callMenu(e.pageX, e.pageY,
     )
 ```
 
-### WindowIPC
+## WindowIPC
 
 这个类是单例模式，用于集中管理窗口的状态信息。储存了窗口的状态HashMap
 
@@ -165,56 +183,28 @@ pageMap: UnwrapNestedRefs<pageMapInter>;//窗口的hashMap
 #### 成员函数：
 
 
-#### registerWindow (new DragWindow时调用此方法)
-```ts
-registerWindow(id: string, title: string):PageItem 
-```
-注册一个窗口，需要id，标题
-
-返回PageItem
-
-PageItem：
-```ts
-interface PageItem {
-    id: string,
-    wid: number,
-    title: string,
-    zindex: number,
-    ifShow: boolean,
-    iftop: boolean,
-    ifDestory: boolean,
-    ifMax:boolean,
-    width:number,
-    height:number,
-    icon:string,
-    content:DefineComponent<{}, {}, any>,
-    props:any,
-    appPointer: App|null
-}
-```
-
-#### upSetWindowIndex
+### upSetWindowIndex
 ```ts
 upSetWindowIndex(id: string):number
 ```
 将窗口移动到顶层
 
 
-#### hideWindow
+### hideWindow
 
 ```ts
 hideWindow(id: string)
 ```
 最小化一个窗口
 
-#### showWindow
+### showWindow
 
 ```ts
 showWindow(id: string)
 ```
 显示窗口
 
-#### destoryWindow
+### destoryWindow
 
 ```ts
 destoryWindow(id: string)
@@ -222,14 +212,14 @@ destoryWindow(id: string)
 销毁窗口
 
 
-#### on
+### on
 
 ```ts
 on(ev:string,func:Function)
 ```
 注册一个事件
 
-#### emit
+### emit
 
 ```ts
 emit(ev:string,...args:any)
@@ -237,7 +227,7 @@ emit(ev:string,...args:any)
 触发一个事件
 
 
-### computerCTC
+## computerCTC
 
 这个类是单例模式，用于管理计算机状态
 
@@ -245,21 +235,21 @@ emit(ev:string,...args:any)
 
 #### 成员函数：
 
-#### closePower
+### closePower
 
 ```ts
 closePower()
 ```
 关机，屏幕会黑屏，刷新页面才会重新显示
 
-#### openPower
+### openPower
 
 ```ts
 openPower()
 ```
 开机，屏幕亮起，载入loading页面，之后进入主页面
 
-#### restartPower
+### restartPower
 
 ```ts
 restartPower()
@@ -267,4 +257,16 @@ restartPower()
 重启，屏幕黑屏后，页面刷新reload
 
 
+# Props 窗口属性
 
+## id
+
+```ts
+let props = defineProps({
+    id: {
+        type:String,
+        default:''
+    }
+})
+```
+在app窗口中接收，可以通过id来获取到窗口到信息
