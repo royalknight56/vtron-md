@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2021-09-18 18:36:00
+ * @LastEditTime: 2021-09-20 21:02:58
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/api/README.md
 -->
@@ -51,7 +51,7 @@ ClearDesktop()
 ## DragWindow
 
 引入DragWindow类
-构造对象，使用后会在屏幕上显示一个窗口
+构造对象，使用后会创建一个窗口，可以在之后将其加入到桌面或者直接打开（show）
 
 ```js
 import {DragWindow} from 'vue3-win10'
@@ -96,7 +96,7 @@ usage:
 ```js
 new DragWindow(0, 0, 'Admin后台管理',appicon, 300, 400, { content: AdmVue }, [ElementPlus])
 ```
-### onWindowResizing
+### onWindowResizing(即将废弃)
 onWindowResizing(event: (x: number, y: number) => void): void;
 用于监听窗口的大小变化事件
 
@@ -107,6 +107,16 @@ let next = new DragWindow(0, 0, '窗口通信',beatico, 300, 400, { content: Adm
 next.show()
 next.onWindowResizing((x,y)=>{ console.log(x,y) })
 ```
+### onWindowEvent
+```ts
+onWindowEvent(name:windowEventsName,event: Function) 
+
+type windowEventsName = "onResize"|"beforeDestory"|"afterDestory"|"beforeHide"|"afterHide"|"onTop";
+
+```
+监听窗口事件
+
+此接口只能监听创建的窗口的事件
 
 ### show
 show(): void;
@@ -182,7 +192,17 @@ pageMap: UnwrapNestedRefs<pageMapInter>;//窗口的hashMap
 ```
 #### 成员函数：
 
+### addWindowEventListener
+```ts
+addWindowEventListener(id:string,name:windowEventsName,func:Function)
+```
+监听一个窗口事件
 
+id是窗口id可以通过props获取
+usage:
+```ts
+WindowIPC.getInstance().addWindowEventListener(props.id,'onResize',()=>{ console.log('resize')})
+```
 ### upSetWindowIndex
 ```ts
 upSetWindowIndex(id: string):number
