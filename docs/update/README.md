@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2021-09-20 20:54:21
+ * @LastEditTime: 2021-09-30 14:46:07
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/update/README.md
 -->
@@ -9,6 +9,7 @@
 <!-- # Usage -->
 # 更新 
 由于目前版本在1.0以下，所以版本不稳定，有可能会发生较大的变化
+
 ## 最新npm版本 0.1.2
 
 #### DragWindow onWindowEvent
@@ -24,11 +25,15 @@ type windowEventsName = "onResize"|"beforeDestory"|"afterDestory"|"beforeHide"|"
 #### WindowIPC addWindowEventListener
 ```ts
 addWindowEventListener(id:string,name:windowEventsName,func:Function)
+
 WindowIPC.getInstance().addWindowEventListener(props.id,'onResize',()=>{ console.log('resize')})
 ```
 监听窗口事件
 
 使用此API可以监听任意id窗口的事件，只要获取到id
+#### Bugs
+
+双击事件问题
 
 ## npm版本 0.1.1
 更新内容:
