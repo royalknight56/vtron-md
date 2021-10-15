@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2021-09-30 14:46:07
+ * @LastEditTime: 2021-10-15 15:58:36
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/update/README.md
 -->
@@ -10,7 +10,11 @@
 # 更新 
 由于目前版本在1.0以下，所以版本不稳定，有可能会发生较大的变化
 
-## 最新npm版本 0.1.2
+## 最新npm版本 0.1.3
+
+vue支持3.2
+
+## npm版本 0.1.2
 
 #### DragWindow onWindowEvent
 ```ts
