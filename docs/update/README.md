@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2021-10-15 15:58:36
+ * @LastEditTime: 2021-11-29 16:16:46
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/update/README.md
 -->
@@ -10,7 +10,15 @@
 # 更新 
 由于目前版本在1.0以下，所以版本不稳定，有可能会发生较大的变化
 
-## 最新npm版本 0.1.3
+## 最新npm版本 0.1.4
+
+增加start_menu_logo配置项，可选择设置左下角开始菜单logo
+
+新修复：
+适配移动端
+磁贴底部降级适配
+
+## npm版本 0.1.3
 
 vue支持3.2
 
