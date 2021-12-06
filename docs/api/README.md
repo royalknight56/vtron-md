@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2021-09-20 21:02:58
+ * @LastEditTime: 2021-11-30 10:58:33
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/api/README.md
 -->
@@ -82,7 +82,7 @@ DragWindow(x:number,y:number,title:string,icon:string|null,width:number,height:n
 | icon  | 窗口图标 |
 | width  | 窗口宽度 |
 | height  | 窗口高度 |
-| app  | 窗口的选项 |
+| ctxPar  | 窗口的选项 |
 | use  | 需要使用到的插件 |
 
 ```js

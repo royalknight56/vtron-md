@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2021-11-29 16:16:46
+ * @LastEditTime: 2021-12-06 14:49:04
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/update/README.md
 -->
@@ -9,8 +9,15 @@
 <!-- # Usage -->
 # 更新 
 由于目前版本在1.0以下，所以版本不稳定，有可能会发生较大的变化
+## 最新npm版本 0.1.5-beta.1
 
-## 最新npm版本 0.1.4
+增加backimg配置项，可选择设置桌面背景
+```js
+import backimg from "./assets/back.jpg"
+backimg:backimg,
+```
+
+## npm版本 0.1.4
 
 增加start_menu_logo配置项，可选择设置左下角开始菜单logo
 
