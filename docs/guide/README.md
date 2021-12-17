@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2021-09-18 17:57:19
+ * @LastEditTime: 2021-12-16 19:40:28
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/guide/README.md
 -->
@@ -114,7 +114,11 @@ import computericon from "./assets/computer.ico"
 AddToDesktop({
   name: '我的电脑',
   icon: computericon,
-  window: new DragWindow(0, 0, '我的电脑', computericon, 400, 400, { content: Test1 })
+  window: new DragWindow({
+      title: '我的电脑',
+      icon: computericon,
+      content: Test1
+    })
 });
 ```
 这里name是应用的名称，icon是应用的图标素材链接，之后传入window来设置点开后打开的窗口。
@@ -128,7 +132,16 @@ AddToDesktop({
 创建一个类的实例，就可以创建新的窗口
 
 ```ts
-new DragWindow(0, 0, 'Admin后台管理',computericon, 300, 400, { content: AdmVue},[ElementPlus])
+let window = new DragWindow({
+      title: '浏览器',
+      icon: brow,
+      width: 600,
+      height: 500,
+      x:0,
+      y:0,
+      content: Test3
+    })
+// new DragWindow(0, 0, 'Admin后台管理',computericon, 300, 400, { content: AdmVue},[ElementPlus])
 ```
 参数分别是
 |  名称   | 含义  |
@@ -139,12 +152,15 @@ new DragWindow(0, 0, 'Admin后台管理',computericon, 300, 400, { content: AdmV
 | icon  | 窗口图标 |
 | width  | 窗口宽度 |
 | height  | 窗口高度 |
-| app  | 窗口的选项 |
-| use  | 需要使用到的插件 |
+| content  | 窗口内容 |
 
 在app参数项中的content属性传入vue组件，就可以打开以这个组件为内容的窗口
 
 这时，调用对象的show方法，就可以展示出新的窗口
+
+```ts
+window.show()
+```
 
 ## 窗口间通信
 

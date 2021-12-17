@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2021-12-06 14:49:04
+ * @LastEditTime: 2021-12-16 19:38:01
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/update/README.md
 -->
@@ -9,7 +9,52 @@
 <!-- # Usage -->
 # 更新 
 由于目前版本在1.0以下，所以版本不稳定，有可能会发生较大的变化
-## 最新npm版本 0.1.5-beta.1
+
+## 最新npm版本 0.1.6
+
+### DragWindow
+
+DragWindow调用方式更改
+
+after:
+```ts
+new DragWindow({
+      title: '浏览器',
+      icon: brow,
+      width: 600,
+      height: 500,
+      x:0,
+      y:0,
+      content: Test3
+    })
+```
+
+before:
+```ts
+new DragWindow(0, 0, 'Admin后台管理',computericon, 300, 400, { content: AdmVue},[ElementPlus])
+```
+
+
+### 模版中获取ID
+before:
+```ts
+let props = defineProps({
+  id:{
+    type:String
+  }
+})
+```
+after:
+```ts
+let winId = <string>inject('windowId')
+```
+在模版中，只需要获取到id，就可以通过WindowIPC来获取到自身到其他属性
+
+
+
+
+
+## npm版本 0.1.5-beta.1
 
 增加backimg配置项，可选择设置桌面背景
 ```js
@@ -31,7 +76,7 @@ vue支持3.2
 
 ## npm版本 0.1.2
 
-#### DragWindow onWindowEvent
+### DragWindow onWindowEvent
 ```ts
 onWindowEvent(name:windowEventsName,event: Function) 
 
@@ -41,7 +86,7 @@ type windowEventsName = "onResize"|"beforeDestory"|"afterDestory"|"beforeHide"|"
 监听窗口事件
 
 此接口只能监听创建的窗口的事件
-#### WindowIPC addWindowEventListener
+### WindowIPC addWindowEventListener
 ```ts
 addWindowEventListener(id:string,name:windowEventsName,func:Function)
 
@@ -50,14 +95,14 @@ WindowIPC.getInstance().addWindowEventListener(props.id,'onResize',()=>{ console
 监听窗口事件
 
 使用此API可以监听任意id窗口的事件，只要获取到id
-#### Bugs
+### Bugs
 
 双击事件问题
 
 ## npm版本 0.1.1
 更新内容:
 
-#### 重要：DragWindow类行为变化
+### 重要：DragWindow类行为变化
 
 在这个版本中，DragWindow会返回一个窗口对象，可以通过这个对象监听事件
 
@@ -70,7 +115,7 @@ after.onWindowResizing((x,y)=>{ console.log(x,y) })
 现在，DragWindow.show调用之后才会显示窗口
 
 现在，可以调用onWindowResizing来监听窗口的大小变化事件
-#### AddToDesktop使用方式变更
+### AddToDesktop使用方式变更
 before:
 ```ts
 AddToDesktop({
@@ -93,12 +138,12 @@ AddToDesktop({
 ```
 因为随着DragWindow类的变化，这里直接使用DragWindow来指示桌面图标要打开的窗口
 
-#### 模版中获取ID
+### 模版中获取ID
 before:
 ```ts
 let props = defineProps({
   ctx:{
-    type:Object as PropType<PageItem>
+    type:Object as PropType<WindowInfo>
   }
 })
 ```

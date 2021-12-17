@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2021-11-30 10:58:33
+ * @LastEditTime: 2021-12-16 19:36:49
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/api/README.md
 -->
@@ -58,19 +58,33 @@ import {DragWindow} from 'vue3-win10'
 import Help from './apps/Help.vue';
 import appicon from "./assets/appicon.png"
 
-new DragWindow(100,100,'关于',appicon,200,100,{content:Help})
-
+let window = new DragWindow({
+      title: '浏览器',
+      icon: brow,
+      width: 600,
+      height: 500,
+      x:0,
+      y:0,
+      content: Test3
+    })
 ```
 
 DragWindow参数：
 
 ```ts
-interface ctxPar{
-    content:ReturnType<typeof defineComponent>,
-    props?:any
+//传入一个对象
+interface option {
+    content: ReturnType<typeof defineComponent>,
+    props?: any,
+    x?: number,
+    y?: number,
+    width?: number,
+    height?: number,
+    title?: string,
+    icon?: string,
 }
 
-DragWindow(x:number,y:number,title:string,icon:string|null,width:number,height:number,ctxpar:ctxPar,use:Array)
+DragWindow(option: option, use?: any)
 
 ```
 
@@ -82,19 +96,21 @@ DragWindow(x:number,y:number,title:string,icon:string|null,width:number,height:n
 | icon  | 窗口图标 |
 | width  | 窗口宽度 |
 | height  | 窗口高度 |
-| ctxPar  | 窗口的选项 |
-| use  | 需要使用到的插件 |
+| content  | 窗口内容 |
 
-```js
-ctxPar:{
-    content:ReturnType<typeof defineComponent>,//:窗口的vue对象
-    props?:any//:传递给vue对象的props
-}
-```
+
 
 usage:
 ```js
-new DragWindow(0, 0, 'Admin后台管理',appicon, 300, 400, { content: AdmVue }, [ElementPlus])
+new DragWindow({
+      title: '浏览器',
+      icon: brow,
+      width: 600,
+      height: 500,
+      x:0,
+      y:0,
+      content: Test3
+    })
 ```
 ### onWindowResizing(即将废弃)
 onWindowResizing(event: (x: number, y: number) => void): void;
@@ -103,7 +119,15 @@ onWindowResizing(event: (x: number, y: number) => void): void;
 usage:
 
 ```ts
-let next = new DragWindow(0, 0, '窗口通信',beatico, 300, 400, { content: AdmVue},[ElementPlus])
+let next =new DragWindow({
+      title: '浏览器',
+      icon: brow,
+      width: 600,
+      height: 500,
+      x:0,
+      y:0,
+      content: Test3
+    })
 next.show()
 next.onWindowResizing((x,y)=>{ console.log(x,y) })
 ```
@@ -125,7 +149,15 @@ show(): void;
 usage:
 
 ```ts
-let next = new DragWindow(0, 0, '窗口通信',beatico, 300, 400, { content: AdmVue},[ElementPlus])
+let next = new DragWindow({
+      title: '浏览器',
+      icon: brow,
+      width: 600,
+      height: 500,
+      x:0,
+      y:0,
+      content: Test3
+    })
 next.show()
 ```
 
@@ -188,7 +220,7 @@ WindowIPC.getInstance():WindowIPC
 #### 实例属性：
 
 ```ts
-pageMap: UnwrapNestedRefs<pageMapInter>;//窗口的hashMap
+windowInfoMap: UnwrapNestedRefs<windowInfoMapInter>;//窗口的hashMap
 ```
 #### 成员函数：
 
@@ -282,11 +314,7 @@ restartPower()
 ## id
 
 ```ts
-let props = defineProps({
-    id: {
-        type:String,
-        default:''
-    }
-})
+// TS 
+let winId = <string>inject('windowId')
 ```
 在app窗口中接收，可以通过id来获取到窗口到信息
