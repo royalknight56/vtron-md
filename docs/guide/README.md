@@ -164,15 +164,15 @@ window.show()
 
 ## 窗口间通信
 
-通过WindowIPC自带的事件系统，可以实现窗口间的通信。
+通过DWM自带的事件系统，可以实现窗口间的通信。
 
 通过on方法，监听一个事件
 ```ts
-WindowIPC.getInstance().on('testEvent',(arg:string)=>{
+DWM.getInstance().on('testEvent',(arg:string)=>{
     msg.value=arg
 })
 ```
 通过emit方法，触发一个事件
 ```ts
-WindowIPC.getInstance().emit('testEvent',str)
+DWM.getInstance().emit('testEvent',str)
 ```

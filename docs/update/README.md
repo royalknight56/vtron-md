@@ -12,6 +12,20 @@
 
 ## 最新npm版本 0.1.6
 
+0.1.6 变化较大
+
+### MenuIPC -> MenuCtrl
+
+MenuIPC 命名更改为 MenuCtrl
+
+### computerCTC -> SystemStatus
+
+computerCTC 命名更改为 SystemStatus
+
+### WindowIPC -> DWM
+
+WindowIPC 命名更改为 DWM(Desktop Windows Manager)
+
 ### DragWindow
 
 DragWindow调用方式更改
@@ -48,7 +62,7 @@ after:
 ```ts
 let winId = <string>inject('windowId')
 ```
-在模版中，只需要获取到id，就可以通过WindowIPC来获取到自身到其他属性
+在模版中，只需要获取到id，就可以通过DWM来获取到自身到其他属性
 
 
 
@@ -86,11 +100,11 @@ type windowEventsName = "onResize"|"beforeDestory"|"afterDestory"|"beforeHide"|"
 监听窗口事件
 
 此接口只能监听创建的窗口的事件
-### WindowIPC addWindowEventListener
+### DWM addWindowEventListener
 ```ts
 addWindowEventListener(id:string,name:windowEventsName,func:Function)
 
-WindowIPC.getInstance().addWindowEventListener(props.id,'onResize',()=>{ console.log('resize')})
+DWM.getInstance().addWindowEventListener(props.id,'onResize',()=>{ console.log('resize')})
 ```
 监听窗口事件
 
@@ -155,7 +169,7 @@ let props = defineProps({
   }
 })
 ```
-在模版中，只需要获取到id，就可以通过WindowIPC来获取到自身到其他属性
+在模版中，只需要获取到id，就可以通过DWM来获取到自身到其他属性
 
 ## npm版本 0.1.0
 更新内容:

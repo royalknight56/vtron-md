@@ -161,14 +161,14 @@ let next = new DragWindow({
 next.show()
 ```
 
-## MenuIPC
+## MenuCtrl
 
 这个类是单例模式，用于管理右键菜单（弹出菜单）。在引入MenuListVue组件后，可以在屏幕上调出菜单
 
 调用类的静态成员函数getInstance获取实例
 
 ```js
-MenuIPC.getInstance():WindowIPC
+MenuCtrl.getInstance():DWM
 ```
 #### 实例属性：
 
@@ -197,7 +197,7 @@ interface menuItem{
 ```
 usage:
 ```ts
-MenuIPC.getInstance().callMenu(e.pageX, e.pageY,
+MenuCtrl.getInstance().callMenu(e.pageX, e.pageY,
         [
             { name: '关机', func: () => { 
                 console.log("关机"); computerCTC.getInstance().closePower() } },
@@ -208,14 +208,14 @@ MenuIPC.getInstance().callMenu(e.pageX, e.pageY,
     )
 ```
 
-## WindowIPC
+## DWM
 
 这个类是单例模式，用于集中管理窗口的状态信息。储存了窗口的状态HashMap
 
 调用类的静态成员函数getInstance获取实例
 
 ```js
-WindowIPC.getInstance():WindowIPC
+DWM.getInstance():DWM
 ```
 #### 实例属性：
 
@@ -233,7 +233,7 @@ addWindowEventListener(id:string,name:windowEventsName,func:Function)
 id是窗口id可以通过props获取
 usage:
 ```ts
-WindowIPC.getInstance().addWindowEventListener(props.id,'onResize',()=>{ console.log('resize')})
+DWM.getInstance().addWindowEventListener(props.id,'onResize',()=>{ console.log('resize')})
 ```
 ### upSetWindowIndex
 ```ts
@@ -279,7 +279,7 @@ emit(ev:string,...args:any)
 触发一个事件
 
 
-## computerCTC
+## SystemStatus
 
 这个类是单例模式，用于管理计算机状态
 
