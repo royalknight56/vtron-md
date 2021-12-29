@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2021-12-16 19:40:28
+ * @LastEditTime: 2021-12-20 09:55:37
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/guide/README.md
 -->
@@ -42,7 +42,7 @@ createApp(App).use(win10).mount('#app')
 
 ## 引入组件
 
-3. 在页面中引入Win10租组件
+3. 在页面中引入Win10组件
  
 ```html
 <Win10></Win10>
@@ -141,7 +141,6 @@ let window = new DragWindow({
       y:0,
       content: Test3
     })
-// new DragWindow(0, 0, 'Admin后台管理',computericon, 300, 400, { content: AdmVue},[ElementPlus])
 ```
 参数分别是
 |  名称   | 含义  |

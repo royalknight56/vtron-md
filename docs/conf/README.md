@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2021-12-06 14:51:10
+ * @LastEditTime: 2021-12-29 09:55:37
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/conf/README.md
 -->
@@ -35,6 +35,20 @@ start_menu_logo:'default',
 import testicon from "../assets/computer.ico";
 start_menu_logo:testicon
 ```
+## login
+设置登录用户名
+```ts
+login:<loginOption|null>null
+
+loginOption:{
+    user_name:string,
+    user_password:string,
+}
+
+```
+login是一个对象，当设置为null时，不显示锁屏界面
+当设置了用户名和密码时，必须使用密码解锁。
+（这只是前端UI解锁，并没有安全设置）
 
 ## backimg
 设置桌面壁纸

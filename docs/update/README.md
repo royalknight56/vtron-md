@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2021-12-16 19:38:01
+ * @LastEditTime: 2021-12-20 09:48:37
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/update/README.md
 -->
@@ -10,7 +10,7 @@
 # 更新 
 由于目前版本在1.0以下，所以版本不稳定，有可能会发生较大的变化
 
-## 最新npm版本 0.1.6
+## 最新npm版本 0.1.6-beta.1
 
 0.1.6 变化较大
 
