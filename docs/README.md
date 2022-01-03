@@ -12,8 +12,8 @@ features:
   details: 推荐 Vue 3 + Typescript + Vite
 - title: 方便快捷
   details: 使用原本的Vue开发方式即可
-# footer: MIT Licensed | Copyright © 2018-present Evan You
 ---
+
 
 <!-- <h1 align="center">vue3-win10</h1>
 
@@ -29,7 +29,8 @@ Vue3 仿Win10 UI 框架
 本框架可以让你的页面像win10视窗系统一样，变为一个网页上的win10系统。
 
 <a href="http://myim.online" target="_blank">Demo</a>|<a href="http://myim.online" target="_blank">Demo</a>|<a href="http://myim.online" target="_blank">Demo</a> -->
-<!-- : [myim.online](http://myim.online) -->
+<!-- [myim.online](http://myim.online) -->
+
 
 
 
