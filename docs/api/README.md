@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2021-12-16 19:36:49
+ * @LastEditTime: 2022-01-13 16:32:43
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/api/README.md
 -->
@@ -13,7 +13,6 @@
 ```html
 <Win10></Win10>
 ```
-
 # Function 函数
 
 ## AddToDesktop
@@ -43,7 +42,9 @@ appInfo:{
 ```ts
 ClearDesktop()
 ```
-用于清空桌面图标
+用于清空桌面图标，
+
+    建议在AddToDesktop之前使用ClearDesktop，防止开发时热更新导致图标越来越多
 
 
 # Class 类
@@ -82,22 +83,24 @@ interface option {
     height?: number,
     title?: string,
     icon?: string,
+    isScalable?:boolean
 }
 
 DragWindow(option: option, use?: any)
 
 ```
 
-|  名称   | 含义  |
-|  ----  | ----  |
-| x  | 左上角位置坐标x |
-| y  | 左上角位置坐标y |
-| title  | 窗口名称 |
-| icon  | 窗口图标 |
-| width  | 窗口宽度 |
-| height  | 窗口高度 |
-| content  | 窗口内容 |
-
+|  名称   | 含义  | 默认值 |
+|  ----  | ----  | ----  |
+| content  | 窗口内容，是一个引入的vue组件 | 必须 |
+| props  | 可以传递给窗口的一些属性 | - |
+| x  | 左上角位置坐标x | 0 |
+| y  | 左上角位置坐标y | 0 |
+| width  | 窗口宽度 |400 |
+| height  | 窗口高度 |400   |
+| title  | 窗口名称 | '未命名窗口' |
+| icon  | 窗口图标 |'' |
+| isScalable  | 窗口是否为可缩放 |true |
 
 
 usage:
@@ -163,12 +166,12 @@ next.show()
 
 ## MenuCtrl
 
-这个类是单例模式，用于管理右键菜单（弹出菜单）。在引入MenuListVue组件后，可以在屏幕上调出菜单
+这个类是单例模式，用于管理右键菜单（弹出菜单）。可以在屏幕上调出菜单
 
 调用类的静态成员函数getInstance获取实例
 
 ```js
-MenuCtrl.getInstance():DWM
+MenuCtrl.getInstance():MenuCtrl
 ```
 #### 实例属性：
 
@@ -224,16 +227,16 @@ windowInfoMap: UnwrapNestedRefs<windowInfoMapInter>;//窗口的hashMap
 ```
 #### 成员函数：
 
-### addWindowEventListener
+### addEventListener
 ```ts
-addWindowEventListener(id:string,name:windowEventsName,func:Function)
+addEventListener(id:string,name:windowEventsName,func:Function)
 ```
 监听一个窗口事件
 
-id是窗口id可以通过props获取
+id是窗口id可以通过inject获取
 usage:
 ```ts
-DWM.getInstance().addWindowEventListener(props.id,'onResize',()=>{ console.log('resize')})
+DWM.getInstance().addEventListener(id,'onResize',()=>{ console.log('resize')})
 ```
 ### upSetWindowIndex
 ```ts

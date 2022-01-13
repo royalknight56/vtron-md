@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2021-12-16 19:40:28
+ * @LastEditTime: 2022-01-13 16:26:39
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/guide/README.md
 -->
@@ -42,13 +42,20 @@ createApp(App).use(win10).mount('#app')
 
 ## 引入组件
 
-3. 在页面中引入Win10租组件
+3. 在页面中引入Win10组件
  
 ```html
 <Win10></Win10>
 ```
 
 此步骤之后，run dev已经可以看到win10启动了
+
+<!-- <ClientOnly>
+  <usewin10/>
+</ClientOnly> -->
+
+
+
 
 ## 样式
 
@@ -89,16 +96,17 @@ createApp(App).use(win10).mount('#app')
 </script>
 ```
 
+
 ### 添加到桌面
 
 将新建到vue应用添加到桌面
 
 使用AddToDesktop函数
 
-先在App.vue中引入AddToDesktop
+先在App.vue中引入AddToDesktop等其他必要等方法
 
 ```ts
-import { AddToDesktop, ClearDesktop } from "vue3-win10";
+import { AddToDesktop, ClearDesktop,DragWindow } from "vue3-win10";
 ```
 
 之后接着引入新建的vue组件，和一个图标素材
@@ -125,6 +133,11 @@ AddToDesktop({
 
 这样，运行vue之后，双击桌面的应用图标，就会显示出刚才写好的vue页面。
 
+<ClientOnly>
+  <win10apphello />
+</ClientOnly>
+
+
 ## 新建窗口
 
 当需要打开一个对话框，或者其他页面时，可以使用DragWindow类
@@ -141,7 +154,6 @@ let window = new DragWindow({
       y:0,
       content: Test3
     })
-// new DragWindow(0, 0, 'Admin后台管理',computericon, 300, 400, { content: AdmVue},[ElementPlus])
 ```
 参数分别是
 |  名称   | 含义  |
