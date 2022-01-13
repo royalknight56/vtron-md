@@ -1,11 +1,14 @@
 /*
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-01-13 15:43:01
+ * @LastEditTime: 2022-01-13 16:35:12
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/.vuepress/config.js
  */
 
 module.exports = {
+    head: [
+        ['script', { type: 'text/javascript' },`document.write(unescape("%3Cspan id='cnzz_stat_icon_1279624758'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279624758%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));`]
+    ],
     title: 'vue3-win10',
     base:"/",
     description: 'Just playing around',
