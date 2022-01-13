@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2021-12-20 10:01:24
+ * @LastEditTime: 2022-01-13 16:32:43
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/api/README.md
 -->
@@ -13,7 +13,6 @@
 ```html
 <Win10></Win10>
 ```
-
 # Function 函数
 
 ## AddToDesktop
@@ -84,6 +83,7 @@ interface option {
     height?: number,
     title?: string,
     icon?: string,
+    isScalable?:boolean
 }
 
 DragWindow(option: option, use?: any)
@@ -92,14 +92,15 @@ DragWindow(option: option, use?: any)
 
 |  名称   | 含义  | 默认值 |
 |  ----  | ----  | ----  |
+| content  | 窗口内容，是一个引入的vue组件 | 必须 |
+| props  | 可以传递给窗口的一些属性 | - |
 | x  | 左上角位置坐标x | 0 |
 | y  | 左上角位置坐标y | 0 |
-| title  | 窗口名称 | '未命名窗口' |
-| icon  | 窗口图标 |'' |
 | width  | 窗口宽度 |400 |
 | height  | 窗口高度 |400   |
-| content  | 窗口内容，是一个引入的vue组件 | 必须 |
-
+| title  | 窗口名称 | '未命名窗口' |
+| icon  | 窗口图标 |'' |
+| isScalable  | 窗口是否为可缩放 |true |
 
 
 usage:

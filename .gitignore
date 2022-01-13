@@ -3,3 +3,6 @@
 dist
 dist-ssr
 *.local
+node_modules
+.temp
+.cache

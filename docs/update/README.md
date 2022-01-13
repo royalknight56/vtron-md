@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2021-12-20 09:48:37
+ * @LastEditTime: 2022-01-13 16:32:54
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/update/README.md
 -->
@@ -9,8 +9,17 @@
 <!-- # Usage -->
 # 更新 
 由于目前版本在1.0以下，所以版本不稳定，有可能会发生较大的变化
+## 最新npm版本 0.1.8-beta.2
 
-## 最新npm版本 0.1.6-beta.1
+### 锁屏功能
+
+可在项目配置项中设置 login，
+
+### 可以配置新建的窗口是否为可缩放的
+
+isScalable?:boolean
+
+## npm版本 0.1.6-beta.1
 
 0.1.6 变化较大
 
