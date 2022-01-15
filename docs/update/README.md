@@ -9,7 +9,23 @@
 <!-- # Usage -->
 # 更新 
 由于目前版本在1.0以下，所以版本不稳定，有可能会发生较大的变化
-## 最新npm版本 0.1.8-beta.2
+## 最新npm版本 0.1.8-beta.3
+
+### MenuCtrl调用方式
+
+```ts
+callMenu(e:MouseEvent)
+MenuCtrl.getInstance().callMenu(e,
+        [
+            { name: '关机', func: () => { 
+                console.log("关机"); computerCTC.getInstance().closePower() } },
+            { name: '重启', func: () => { 
+                console.log("重启"); computerCTC.getInstance().restartPower() } }
+
+        ]
+    )
+```
+传入mouseevent即可
 
 ### 锁屏功能
 

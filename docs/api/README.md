@@ -115,6 +115,13 @@ new DragWindow({
       content: Test3
     })
 ```
+### windowInfo
+
+```ts
+a.windowInfo
+```
+获取窗口信息
+
 ### onWindowResizing(即将废弃)
 onWindowResizing(event: (x: number, y: number) => void): void;
 用于监听窗口的大小变化事件
@@ -183,13 +190,12 @@ MenuCtrl.getInstance():MenuCtrl
 ### callMenu
 
 ```ts
-callMenu(x:number,y:number,list:UnwrapNestedRefs<Array<menuItem>>)
+callMenu(e: MouseEvent,list:UnwrapNestedRefs<Array<menuItem>>)
 ```
 
 |  名称   | 含义  |
 |  ----  | ----  |
-| x  | 左上角位置坐标x |
-| y  | 左上角位置坐标y |
+| e  | 点击的鼠标事件 |
 | list  | 选项菜单数组 |
 
 ```ts
@@ -200,7 +206,7 @@ interface menuItem{
 ```
 usage:
 ```ts
-MenuCtrl.getInstance().callMenu(e.pageX, e.pageY,
+MenuCtrl.getInstance().callMenu(e,
         [
             { name: '关机', func: () => { 
                 console.log("关机"); computerCTC.getInstance().closePower() } },
@@ -227,6 +233,17 @@ windowInfoMap: UnwrapNestedRefs<windowInfoMapInter>;//窗口的hashMap
 ```
 #### 成员函数：
 
+### getWindow
+
+```ts
+
+DWM.getWindow(id: string): WindowInfo
+
+let windowInfo= DWM.getInstance().getWindow(winId)
+```
+获得一个窗口的信息
+
+
 ### addEventListener
 ```ts
 addEventListener(id:string,name:windowEventsName,func:Function)
@@ -234,7 +251,9 @@ addEventListener(id:string,name:windowEventsName,func:Function)
 监听一个窗口事件
 
 id是窗口id可以通过inject获取
+
 usage:
+
 ```ts
 DWM.getInstance().addEventListener(id,'onResize',()=>{ console.log('resize')})
 ```
