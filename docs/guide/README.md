@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-01-13 16:26:39
+ * @LastEditTime: 2022-01-17 16:11:26
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/guide/README.md
 -->
@@ -49,12 +49,6 @@ createApp(App).use(win10).mount('#app')
 ```
 
 此步骤之后，run dev已经可以看到win10启动了
-
-<!-- <ClientOnly>
-  <usewin10/>
-</ClientOnly> -->
-
-
 
 
 ## 样式
