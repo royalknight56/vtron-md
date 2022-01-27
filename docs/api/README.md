@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-01-13 16:32:43
+ * @LastEditTime: 2022-01-27 15:05:00
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/api/README.md
 -->
@@ -122,7 +122,7 @@ a.windowInfo
 ```
 获取窗口信息
 
-### onWindowResizing(即将废弃)
+<!-- ### onWindowResizing(即将废弃)
 onWindowResizing(event: (x: number, y: number) => void): void;
 用于监听窗口的大小变化事件
 
@@ -150,7 +150,7 @@ type windowEventsName = "onResize"|"beforeDestory"|"afterDestory"|"beforeHide"|"
 ```
 监听窗口事件
 
-此接口只能监听创建的窗口的事件
+此接口只能监听创建的窗口的事件 -->
 
 ### show
 show(): void;

@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-01-13 16:32:54
+ * @LastEditTime: 2022-01-27 15:01:19
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/update/README.md
 -->
@@ -9,7 +9,14 @@
 <!-- # Usage -->
 # 更新 
 由于目前版本在1.0以下，所以版本不稳定，有可能会发生较大的变化
-## 最新npm版本 0.1.8-beta.3
+
+## 最新npm版本 0.1.8-beta.4
+
+SystemStatus可以挂载解锁事件，并根据密码控制是否解锁
+
+mountUnlockEvent
+
+## npm版本 0.1.8-beta.3
 
 ### MenuCtrl调用方式
 
@@ -18,10 +25,9 @@ callMenu(e:MouseEvent)
 MenuCtrl.getInstance().callMenu(e,
         [
             { name: '关机', func: () => { 
-                console.log("关机"); computerCTC.getInstance().closePower() } },
+                console.log("关机"); } },
             { name: '重启', func: () => { 
-                console.log("重启"); computerCTC.getInstance().restartPower() } }
-
+                console.log("重启");  } }
         ]
     )
 ```
@@ -100,8 +106,9 @@ let winId = <string>inject('windowId')
 import backimg from "./assets/back.jpg"
 backimg:backimg,
 ```
+## 过早版本
 
-## npm版本 0.1.4
+### npm版本 0.1.4
 
 增加start_menu_logo配置项，可选择设置左下角开始菜单logo
 
@@ -109,13 +116,13 @@ backimg:backimg,
 适配移动端
 磁贴底部降级适配
 
-## npm版本 0.1.3
+### npm版本 0.1.3
 
 vue支持3.2
 
-## npm版本 0.1.2
+### npm版本 0.1.2
 
-### DragWindow onWindowEvent
+#### DragWindow onWindowEvent
 ```ts
 onWindowEvent(name:windowEventsName,event: Function) 
 
@@ -125,7 +132,7 @@ type windowEventsName = "onResize"|"beforeDestory"|"afterDestory"|"beforeHide"|"
 监听窗口事件
 
 此接口只能监听创建的窗口的事件
-### DWM addWindowEventListener
+#### DWM addWindowEventListener
 ```ts
 addWindowEventListener(id:string,name:windowEventsName,func:Function)
 
@@ -134,14 +141,14 @@ DWM.getInstance().addWindowEventListener(props.id,'onResize',()=>{ console.log('
 监听窗口事件
 
 使用此API可以监听任意id窗口的事件，只要获取到id
-### Bugs
+#### Bugs
 
 双击事件问题
 
-## npm版本 0.1.1
+### npm版本 0.1.1
 更新内容:
 
-### 重要：DragWindow类行为变化
+#### 重要：DragWindow类行为变化
 
 在这个版本中，DragWindow会返回一个窗口对象，可以通过这个对象监听事件
 
@@ -154,7 +161,7 @@ after.onWindowResizing((x,y)=>{ console.log(x,y) })
 现在，DragWindow.show调用之后才会显示窗口
 
 现在，可以调用onWindowResizing来监听窗口的大小变化事件
-### AddToDesktop使用方式变更
+#### AddToDesktop使用方式变更
 before:
 ```ts
 AddToDesktop({
@@ -177,7 +184,7 @@ AddToDesktop({
 ```
 因为随着DragWindow类的变化，这里直接使用DragWindow来指示桌面图标要打开的窗口
 
-### 模版中获取ID
+#### 模版中获取ID
 before:
 ```ts
 let props = defineProps({
@@ -196,7 +203,7 @@ let props = defineProps({
 ```
 在模版中，只需要获取到id，就可以通过DWM来获取到自身到其他属性
 
-## npm版本 0.1.0
+### npm版本 0.1.0
 更新内容:
 
 废弃 apptemp 属性
