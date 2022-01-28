@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-01-13 16:24:47
+ * @LastEditTime: 2022-01-28 11:18:12
  * @Description: 
 -->
 <template>
@@ -16,10 +16,8 @@ onMounted(() => {
     ClearDesktop()
     AddToDesktop({
         name: '我的电脑',
-        icon: '',
         window: new DragWindow({
             title: '我的电脑',
-            icon: '',
             x: 0,
             y: 0,
             content: Apphello

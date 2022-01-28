@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-01-27 15:05:00
+ * @LastEditTime: 2022-01-28 11:23:55
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/api/README.md
 -->
@@ -300,7 +300,18 @@ emit(ev:string,...args:any)
 ```
 触发一个事件
 
+## Notify
+弹出右下角提示
 
+调用方式
+
+```ts
+import { Notify } from "vue3-win10";
+new Notify('title',"testtest")
+```
+```ts
+constructor(title:string,messages:string)
+```
 ## SystemStatus
 
 这个类是单例模式，用于管理计算机状态

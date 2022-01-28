@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-01-27 15:01:19
+ * @LastEditTime: 2022-01-28 11:15:34
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/update/README.md
 -->
@@ -9,14 +9,22 @@
 <!-- # Usage -->
 # 更新 
 由于目前版本在1.0以下，所以版本不稳定，有可能会发生较大的变化
+## npm版本 0.2.0
+新增Notify功能。可在右下角显示提示信息。
 
-## 最新npm版本 0.1.8-beta.4
+## npm版本 0.1.9
+贴边吸附
+
+默认图标
+
+## npm版本 0.1.8
+
+### 0.1.8-beta.4
 
 SystemStatus可以挂载解锁事件，并根据密码控制是否解锁
 
 mountUnlockEvent
 
-## npm版本 0.1.8-beta.3
 
 ### MenuCtrl调用方式
 
@@ -96,17 +104,17 @@ let winId = <string>inject('windowId')
 在模版中，只需要获取到id，就可以通过DWM来获取到自身到其他属性
 
 
+## 过早版本
 
 
-
-## npm版本 0.1.5-beta.1
+### npm版本 0.1.5
 
 增加backimg配置项，可选择设置桌面背景
 ```js
 import backimg from "./assets/back.jpg"
 backimg:backimg,
 ```
-## 过早版本
+
 
 ### npm版本 0.1.4
 
