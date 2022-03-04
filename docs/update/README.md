@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-01-28 11:15:34
+ * @LastEditTime: 2022-03-04 17:09:54
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/update/README.md
 -->
@@ -9,6 +9,9 @@
 <!-- # Usage -->
 # 更新 
 由于目前版本在1.0以下，所以版本不稳定，有可能会发生较大的变化
+## npm版本 0.2.1
+在tailwindcss框架下使用时，样式会被污染，现在对部分样式进行适配,进行了样式reset
+
 ## npm版本 0.2.0
 新增Notify功能。可在右下角显示提示信息。
 

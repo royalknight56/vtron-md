@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-01-28 11:23:55
+ * @LastEditTime: 2022-03-04 17:20:24
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/api/README.md
 -->
@@ -118,7 +118,38 @@ new DragWindow({
 ### windowInfo
 
 ```ts
-a.windowInfo
+
+let window = new DragWindow({
+      title: '浏览器',
+      icon: brow,
+      width: 600,
+      height: 500,
+      x:0,
+      y:0,
+      content: Test3
+    })
+
+window.windowInfo
+
+
+interface WindowInfo {
+    id: string,
+    wid: number,
+    zindex: number,
+    ifShow: boolean,
+    iftop: boolean,
+    ifDestory: boolean,
+    isMaximize: boolean,
+    props?: any,
+    x?: number,
+    y?: number,
+    width?: number,
+    height?: number,
+    title?: string,
+    icon?: string,
+    isScalable?: boolean
+}
+
 ```
 获取窗口信息
 

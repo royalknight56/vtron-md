@@ -7,4 +7,3 @@ node_modules
 .temp
 .cache
 docs/.vuepress/dist
-docs/.vuepress/dist
