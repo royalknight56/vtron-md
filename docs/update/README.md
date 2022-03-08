@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-03-04 17:09:54
+ * @LastEditTime: 2022-03-08 20:58:17
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/update/README.md
 -->
@@ -9,6 +9,24 @@
 <!-- # Usage -->
 # 更新 
 由于目前版本在1.0以下，所以版本不稳定，有可能会发生较大的变化
+## npm版本 0.2.2
+
+支持系统锁屏页面
+
+系统设置页面可以对设置进行改动
+
+config在设置中会被本地存储
+
+修复在最大化时窗口位置会被拖动的bug
+
+修复火狐浏览器下背景图片会被拖动的bug
+
+优化样式，样式进行隔离
+
+优化窗口样式，创建窗口的堆叠上下文
+
+优化DWM的成员函数可访问性
+
 ## npm版本 0.2.1
 在tailwindcss框架下使用时，样式会被污染，现在对部分样式进行适配,进行了样式reset
 
@@ -52,23 +70,25 @@ MenuCtrl.getInstance().callMenu(e,
 
 isScalable?:boolean
 
-## npm版本 0.1.6-beta.1
+## 过早版本
+
+### npm版本 0.1.6
 
 0.1.6 变化较大
 
-### MenuIPC -> MenuCtrl
+#### MenuIPC -> MenuCtrl
 
 MenuIPC 命名更改为 MenuCtrl
 
-### computerCTC -> SystemStatus
+#### computerCTC -> SystemStatus
 
 computerCTC 命名更改为 SystemStatus
 
-### WindowIPC -> DWM
+#### WindowIPC -> DWM
 
 WindowIPC 命名更改为 DWM(Desktop Windows Manager)
 
-### DragWindow
+#### DragWindow
 
 DragWindow调用方式更改
 
@@ -91,7 +111,7 @@ new DragWindow(0, 0, 'Admin后台管理',computericon, 300, 400, { content: AdmV
 ```
 
 
-### 模版中获取ID
+#### 模版中获取ID
 before:
 ```ts
 let props = defineProps({
@@ -106,8 +126,6 @@ let winId = <string>inject('windowId')
 ```
 在模版中，只需要获取到id，就可以通过DWM来获取到自身到其他属性
 
-
-## 过早版本
 
 
 ### npm版本 0.1.5
