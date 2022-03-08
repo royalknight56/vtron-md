@@ -1,13 +1,13 @@
 /*
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-01-13 16:42:11
+ * @LastEditTime: 2022-03-08 17:22:14
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/.vuepress/config.js
  */
 
 module.exports = {
     title: 'vue3-win10',
-    base:"/",
+    base: "/",
     description: 'Just playing around',
     // plugins: ['demo-container'],
     theme: '@vuepress/theme-default',
@@ -24,17 +24,38 @@ module.exports = {
             { text: 'GitHub', link: 'https://github.com/royalknight56/vue-windows10' },
             { text: 'Demo', link: 'http://myim.online' },
         ],
+        sidebar: {
+            '/api/': [
+                {
+                    text: 'Class',
+                    children: [
+                        '/api/Class/DragWindow.md',
+                        '/api/Class/MenuCtrl.md',
+                        '/api/Class/DWM.md',
+                        '/api/Class/Notify.md',
+                        '/api/Class/SystemStatus.md',
+                    ]
+                },
 
-        // sidebar: {
-        //     '/guide/': 'auto',
-        //     '/api/':'auto',
-        //     '/update/':'auto',
-        //     '/conf/':'auto',
-        //     '/': [
-
-        //     ]
-        // },
-
-
+                {
+                    text: 'Component',
+                    children: [
+                        '/api/Component/Main.md',]
+                },
+                {
+                    text: 'Function',
+                    children: [
+                        '/api/Function/Desktop.md',]
+                },
+                {
+                    text: 'Props',
+                    children: [
+                        '/api/Props/id.md',]
+                },
+            ],
+            '/conf/': ['/conf/README.md'],
+            '/guide/': ['/guide/README.md'],
+            '/update/': ['/update/README.md'],
+        }
     }
 }
