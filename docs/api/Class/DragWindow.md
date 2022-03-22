@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-03-08 16:00:52
+ * @LastEditTime: 2022-03-22 14:33:52
  * @Description: 
 -->
 # DragWindow
@@ -20,13 +20,15 @@ let window = new DragWindow({
       height: 500,
       x:0,
       y:0,
-      content: Test3
+      content: Test3,
+      buttons:['close','min','max']
     })
 ```
 
 DragWindow参数：
 
 ```ts
+
 //传入一个对象
 interface option {
     content: ReturnType<typeof defineComponent>,
@@ -37,7 +39,9 @@ interface option {
     height?: number,
     title?: string,
     icon?: string,
-    isScalable?:boolean
+    isScalable?:boolean,
+    buttons?:WindowButton[]
+    // type WindowButton = 'flush'|'close'|'min'|'max'
 }
 
 DragWindow(option: option, use?: any)
@@ -55,6 +59,7 @@ DragWindow(option: option, use?: any)
 | title  | 窗口名称 | '未命名窗口' |
 | icon  | 窗口图标 |'' |
 | isScalable  | 窗口是否为可缩放 |true |
+| buttons  | 窗口按钮 | ['close','min','max'] flush刷新按钮，close关闭按钮 |
 
 
 usage:
@@ -62,10 +67,6 @@ usage:
 new DragWindow({
       title: '浏览器',
       icon: brow,
-      width: 600,
-      height: 500,
-      x:0,
-      y:0,
       content: Test3
     })
 ```
@@ -75,11 +76,6 @@ new DragWindow({
 
 let window = new DragWindow({
       title: '浏览器',
-      icon: brow,
-      width: 600,
-      height: 500,
-      x:0,
-      y:0,
       content: Test3
     })
 

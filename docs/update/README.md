@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-03-08 20:58:17
+ * @LastEditTime: 2022-03-22 14:28:12
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/update/README.md
 -->
@@ -9,6 +9,13 @@
 <!-- # Usage -->
 # 更新 
 由于目前版本在1.0以下，所以版本不稳定，有可能会发生较大的变化
+## npm版本 0.2.3
+
+添加按钮配置，可以选择右上角按钮。
+
+添加刷新按钮。
+
+
 ## npm版本 0.2.2
 
 支持系统锁屏页面
