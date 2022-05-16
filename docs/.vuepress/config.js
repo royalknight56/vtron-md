@@ -33,7 +33,7 @@ module.exports = {
                         '/api/Class/MenuCtrl.md',
                         '/api/Class/DWM.md',
                         '/api/Class/Notify.md',
-                        '/api/Class/SystemStatus.md',
+                        '/api/Class/SystemState.md',
                     ]
                 },
 

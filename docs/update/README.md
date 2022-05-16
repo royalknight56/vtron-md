@@ -49,7 +49,7 @@ config在设置中会被本地存储
 
 ### 0.1.8-beta.4
 
-SystemStatus可以挂载解锁事件，并根据密码控制是否解锁
+SystemState可以挂载解锁事件，并根据密码控制是否解锁
 
 mountUnlockEvent
 
@@ -87,9 +87,9 @@ isScalable?:boolean
 
 MenuIPC 命名更改为 MenuCtrl
 
-#### computerCTC -> SystemStatus
+#### computerCTC -> SystemState
 
-computerCTC 命名更改为 SystemStatus
+computerCTC 命名更改为 SystemState
 
 #### WindowIPC -> DWM
 

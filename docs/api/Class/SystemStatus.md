@@ -1,9 +1,9 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-03-08 16:10:28
+ * @LastEditTime: 2022-04-26 14:51:48
  * @Description: 
 -->
-# SystemStatus
+# SystemState
 
 这个类是单例模式，用于管理计算机状态
 

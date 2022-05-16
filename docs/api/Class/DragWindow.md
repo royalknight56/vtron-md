@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-03-22 14:33:52
+ * @LastEditTime: 2022-05-16 13:18:05
  * @Description: 
 -->
 # DragWindow
@@ -50,7 +50,7 @@ DragWindow(option: option, use?: any)
 
 |  名称   | 含义  | 默认值 |
 |  ----  | ----  | ----  |
-| content  | 窗口内容，是一个引入的vue组件 | 必须 |
+| content  | 窗口内容，是一个引入的vue组件，可以是Url网址 | 必须 |
 | props  | 可以传递给窗口的一些属性 | - |
 | x  | 左上角位置坐标x | 0 |
 | y  | 左上角位置坐标y | 0 |
