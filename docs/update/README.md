@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-03-22 14:28:12
+ * @LastEditTime: 2022-05-16 14:32:41
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/update/README.md
 -->
@@ -9,6 +9,10 @@
 <!-- # Usage -->
 # 更新 
 由于目前版本在1.0以下，所以版本不稳定，有可能会发生较大的变化
+## npm版本 0.2.5
+
+DragWindow的content可以使用链接
+
 ## npm版本 0.2.4
 
 更换为浅色主题
