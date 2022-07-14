@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-06-12 12:42:01
+ * @LastEditTime: 2022-07-14 11:13:31
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/update/README.md
 -->
@@ -9,6 +9,14 @@
 <!-- # Usage -->
 # 更新 
 由于目前版本在1.0以下，所以版本不稳定，有可能会发生较大的变化
+## npm版本 0.2.7
+
+新增远程vue SFC文件加载！！！
+
+    通过获取SFC，将远程vue组件加载到本地！
+
+窗口问题缩放修复
+
 ## npm版本 0.2.6
 
 系统状态图标

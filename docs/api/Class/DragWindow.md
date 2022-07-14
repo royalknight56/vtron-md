@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-05-16 13:18:05
+ * @LastEditTime: 2022-07-14 11:24:25
  * @Description: 
 -->
 # DragWindow
@@ -40,6 +40,7 @@ interface option {
     title?: string,
     icon?: string,
     isScalable?:boolean,
+    isSFC?:boolean,
     buttons?:WindowButton[]
     // type WindowButton = 'flush'|'close'|'min'|'max'
 }
@@ -59,6 +60,7 @@ DragWindow(option: option, use?: any)
 | title  | 窗口名称 | '未命名窗口' |
 | icon  | 窗口图标 |'' |
 | isScalable  | 窗口是否为可缩放 |true |
+| isSFC  | 窗口是否为SFC组件 |false |
 | buttons  | 窗口按钮 | ['close','min','max'] flush刷新按钮，close关闭按钮 |
 
 
@@ -69,7 +71,33 @@ new DragWindow({
       icon: brow,
       content: Test3
     })
+new DragWindow({
+      isSFC: true,
+      content: 'http://localhost:3002/app'
+    })
+new DragWindow({
+      content: 'https://v3.cn.vuejs.org/api/global-api.html#h'
+    })
 ```
+
+当为isSFC时，会从content指示的链接加载SFC组件，
+
+获取到JSON信息：
+```js
+JSON.stringify({
+    appName: 'testapp',
+    version: '1.0.0',
+    content:`<template>
+  <div id="app"> 
+  </div>
+  </template>
+  <script>
+  </script>
+  <style>
+  </style>`
+  })
+```
+  之后，会把content的SFC文件编译为Vue组件
 ### windowInfo
 
 ```ts
@@ -97,7 +125,8 @@ interface WindowInfo {
     height?: number,
     title?: string,
     icon?: string,
-    isScalable?: boolean
+    isScalable?: boolean,
+    isSFC?:boolean,
 }
 
 ```

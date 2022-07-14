@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /win.png
+heroImage: /winv3.png
 heroText: vue3-win10
 tagline: 基于Vue3的仿Win10 UI 框架
 actionText: Start →
