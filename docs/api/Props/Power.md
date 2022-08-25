@@ -1,13 +1,12 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-04-26 14:51:48
+ * @LastEditTime: 2022-07-15 10:56:04
  * @Description: 
 -->
-# SystemState
+# Power
 
-这个类是单例模式，用于管理计算机状态
+用于管理计算机状态
 
-调用类的静态成员函数getInstance获取实例
 
 #### 成员函数：
 
@@ -17,6 +16,11 @@
 closePower()
 ```
 关机，屏幕会黑屏，刷新页面才会重新显示
+
+usage
+```ts
+system.Power.closePower()
+```
 
 ### openPower
 

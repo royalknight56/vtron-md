@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-03-08 16:10:10
+ * @LastEditTime: 2022-07-14 20:04:12
  * @Description: 
 -->
 # Notify
@@ -9,8 +9,7 @@
 调用方式
 
 ```ts
-import { Notify } from "vue3-win10";
-new Notify('title',"testtest")
+system.Notify.notify('title',"testtest")
 ```
 ```ts
 constructor(title:string,messages:string)

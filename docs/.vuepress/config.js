@@ -1,6 +1,6 @@
 /*
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-03-08 17:22:14
+ * @LastEditTime: 2022-07-14 20:04:40
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/.vuepress/config.js
  */
@@ -27,13 +27,13 @@ module.exports = {
         sidebar: {
             '/api/': [
                 {
-                    text: 'Class',
+                    text: 'Props',
                     children: [
-                        '/api/Class/DragWindow.md',
-                        '/api/Class/MenuCtrl.md',
-                        '/api/Class/DWM.md',
-                        '/api/Class/Notify.md',
-                        '/api/Class/SystemState.md',
+                        '/api/Props/DragWindow.md',
+                        '/api/Props/ContextMenu.md',
+                        '/api/Props/DWM.md',
+                        '/api/Props/Notify.md',
+                        '/api/Props/Power.md',
                     ]
                 },
 
@@ -48,9 +48,9 @@ module.exports = {
                         '/api/Function/Desktop.md',]
                 },
                 {
-                    text: 'Props',
+                    text: 'Provide',
                     children: [
-                        '/api/Props/id.md',]
+                        '/api/Provide/id.md',]
                 },
             ],
             '/conf/': ['/conf/README.md'],

@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-07-14 11:13:31
+ * @LastEditTime: 2022-08-25 10:14:30
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/update/README.md
 -->
@@ -9,6 +9,14 @@
 <!-- # Usage -->
 # 更新 
 由于目前版本在1.0以下，所以版本不稳定，有可能会发生较大的变化
+## npm版本 0.3.1
+
+紧急修复d.ts 问题
+
+## npm版本 0.3.0
+
+System类，所有API调用方式变更！
+
 ## npm版本 0.2.7
 
 新增远程vue SFC文件加载！！！

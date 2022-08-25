@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-01-28 11:18:12
+ * @LastEditTime: 2022-07-15 10:59:22
  * @Description: 
 -->
 <template>
@@ -15,9 +15,9 @@ import { AddToDesktop, ClearDesktop, DragWindow } from "vue3-win10";
 onMounted(() => {
     ClearDesktop()
     AddToDesktop({
-        name: '我的电脑',
+        name: 'HelloWord',
         window: new DragWindow({
-            title: '我的电脑',
+            title: 'HelloWord',
             x: 0,
             y: 0,
             content: Apphello

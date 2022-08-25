@@ -1,19 +1,20 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-07-14 11:24:25
+ * @LastEditTime: 2022-08-25 10:20:32
  * @Description: 
 -->
 # DragWindow
 
-引入DragWindow类
-构造对象，使用后会创建一个窗口，可以在之后将其加入到桌面或者直接打开（show）
+使用 DragWindow 方法，会创建一个窗口
+
+可以在之后将其加入到桌面或者直接打开（show）
 
 ```js
-import {DragWindow} from 'vue3-win10'
+import {system} from "./systemInit"
 import Help from './apps/Help.vue';
 import appicon from "./assets/appicon.png"
 
-let window = new DragWindow({
+let window = system.DragWindow({
       title: '浏览器',
       icon: brow,
       width: 600,
@@ -31,7 +32,7 @@ DragWindow参数：
 
 //传入一个对象
 interface option {
-    content: ReturnType<typeof defineComponent>,
+    content: VueComponent|string,
     props?: any,
     x?: number,
     y?: number,
@@ -45,7 +46,7 @@ interface option {
     // type WindowButton = 'flush'|'close'|'min'|'max'
 }
 
-DragWindow(option: option, use?: any)
+system.DragWindow(option: option, use?: any)
 
 ```
 
@@ -66,16 +67,16 @@ DragWindow(option: option, use?: any)
 
 usage:
 ```js
-new DragWindow({
+system.DragWindow({
       title: '浏览器',
       icon: brow,
       content: Test3
     })
-new DragWindow({
+system.DragWindow({
       isSFC: true,
       content: 'http://localhost:3002/app'
     })
-new DragWindow({
+system.DragWindow({
       content: 'https://v3.cn.vuejs.org/api/global-api.html#h'
     })
 ```
@@ -98,11 +99,24 @@ JSON.stringify({
   })
 ```
   之后，会把content的SFC文件编译为Vue组件
+
+  例如：
+  ```js
+  system.DragWindow({
+      isSFC: true,
+      content: 'http://localhost:3002/app'
+    })
+  ```
+  这个窗口会请求'http://localhost:3002/app'；
+
+  并将获取到的content作为窗口内容；
+  
+  content是一个SFC字符串；
 ### windowInfo
 
 ```ts
 
-let window = new DragWindow({
+let window = system.DragWindow({
       title: '浏览器',
       content: Test3
     })
@@ -169,7 +183,7 @@ show(): void;
 usage:
 
 ```ts
-let next = new DragWindow({
+let next = system.DragWindow({
       title: '浏览器',
       icon: brow,
       width: 600,
@@ -179,4 +193,119 @@ let next = new DragWindow({
       content: Test3
     })
 next.show()
+```
+
+在窗口被加入到桌面时，点击桌面图标会调用窗口的show方法
+
+### destory
+destory(): void;
+
+销毁窗口。
+
+usage:
+
+```ts
+let next = system.DragWindow({
+      title: '浏览器',
+      icon: brow,
+      width: 600,
+      height: 500,
+      x:0,
+      y:0,
+      content: Test3
+    })
+next.destory()
+```
+相当于窗口的关闭按钮
+
+### isMaximized
+isMaximized(): void;
+
+得到窗口是否为最大化
+
+usage:
+
+```ts
+let window = system.DragWindow({
+      content: Test
+    })
+window.isMaximized()
+```
+
+
+### isMaximized
+
+isMaximized(): void;
+
+得到窗口是否为最大化
+
+usage:
+
+```ts
+let window = system.DragWindow({
+      content: Test
+    })
+window.isMaximized()
+```
+
+### isMinimized
+
+isMinimized(): void;
+
+得到窗口是否为最小化
+
+usage:
+
+```ts
+let window = system.DragWindow({
+      content: Test
+    })
+window.isMinimized()
+```
+
+
+### maximize
+
+maximize(): void;
+
+使窗口为最大化
+
+usage:
+
+```ts
+let window = system.DragWindow({
+      content: Test
+    })
+window.maximize()
+```
+
+### minimize
+
+minimize(): void;
+
+使窗口为最小化
+
+usage:
+
+```ts
+let window = system.DragWindow({
+      content: Test
+    })
+window.minimize()
+```
+
+
+### moveTop
+
+moveTop(): void;
+
+使窗口在最上方
+
+usage:
+
+```ts
+let window = system.DragWindow({
+      content: Test
+    })
+window.moveTop()
 ```

@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-07-14 11:18:23
+ * @LastEditTime: 2022-07-14 19:43:35
  * @Description: 
 -->
 ## npm版本 0.3.1
@@ -36,7 +36,7 @@ system.SystemState;
 
 system.Desktop;
 
-let a = new system.DragWindow({
+let a = system.DragWindow({
   center: true,
   resizable: true,
   movable: true,

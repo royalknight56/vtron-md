@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-03-08 16:12:06
+ * @LastEditTime: 2022-07-14 20:06:42
  * @Description: 
 -->
 # Desktop
@@ -13,7 +13,7 @@ interface appInfo{
     window: DragWindow;
 }
 
-AddToDesktop(app:appInfo)
+system.AddToDesktop(app:appInfo)
 ```
 将一个app添加到桌面图标中
 
@@ -30,6 +30,7 @@ appInfo:{
 
 ```ts
 ClearDesktop()
+system.ClearDesktop()
 ```
 用于清空桌面图标，
 

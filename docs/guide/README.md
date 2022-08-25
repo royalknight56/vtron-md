@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-01-17 16:11:26
+ * @LastEditTime: 2022-07-15 10:46:55
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/guide/README.md
 -->
@@ -42,11 +42,29 @@ createApp(App).use(win10).mount('#app')
 
 ## 引入组件
 
+首先，我们需要创建一个system对象，这个对象管理着系统的所有状态信息。
+
+一般来说，我们创建另一个文件，存放system对象
+```ts
+// system.ts
+import { System } from "vue3-win10";
+let system = new System();
+export {
+  system
+}
+```
+
 3. 在页面中引入Win10组件
  
-```html
-<Win10></Win10>
+```vue
+// App.vue
+<Win10 :system="system"></Win10>
+<script setup>
+import { system } from './system'
+</script>
 ```
+
+这里需要传入system对象，这样，Win10组件就可以获取到系统的所有状态信息。
 
 此步骤之后，run dev已经可以看到win10启动了
 
@@ -59,7 +77,7 @@ createApp(App).use(win10).mount('#app')
 
 ```html
   <div class="outer">
-    <Win10></Win10>
+    <Win10 :system="system"></Win10>
   </div>
 ```
 定义outer样式
@@ -97,9 +115,10 @@ createApp(App).use(win10).mount('#app')
 
 使用AddToDesktop函数
 
-先在App.vue中引入AddToDesktop等其他必要等方法
+先在App.vue中引入system
 
 ```ts
+import { system } from './system'
 import { AddToDesktop, ClearDesktop,DragWindow } from "vue3-win10";
 ```
 
@@ -110,13 +129,13 @@ import Test1 from "./apps/Test1.vue"
 import computericon from "./assets/computer.ico"
 ```
 
-之后使用 函数将应用添加到桌面，之后点击桌面到图标就会打开刚才写好到vue组件
+之后使用system.AddToDesktop函数将应用添加到桌面，之后点击桌面到图标就会打开刚才写好到vue组件
 
 ```ts
-AddToDesktop({
+system.AddToDesktop({
   name: '我的电脑',
   icon: computericon,
-  window: new DragWindow({
+  window: system.DragWindow({
       title: '我的电脑',
       icon: computericon,
       content: Test1
@@ -134,12 +153,10 @@ AddToDesktop({
 
 ## 新建窗口
 
-当需要打开一个对话框，或者其他页面时，可以使用DragWindow类
-
-创建一个类的实例，就可以创建新的窗口
+当需要打开一个对话框，或者其他页面时，可以使用DragWindow函数
 
 ```ts
-let window = new DragWindow({
+let window = system.DragWindow({
       title: '浏览器',
       icon: brow,
       width: 600,
@@ -166,19 +183,4 @@ let window = new DragWindow({
 
 ```ts
 window.show()
-```
-
-## 窗口间通信
-
-通过DWM自带的事件系统，可以实现窗口间的通信。
-
-通过on方法，监听一个事件
-```ts
-DWM.getInstance().on('testEvent',(arg:string)=>{
-    msg.value=arg
-})
-```
-通过emit方法，触发一个事件
-```ts
-DWM.getInstance().emit('testEvent',str)
 ```
