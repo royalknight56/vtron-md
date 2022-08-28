@@ -4,19 +4,22 @@
  * @Description: 
 -->
 <template>
+<ClientOnly>
     <div class="outer">
-        <Win10></Win10>
+        <Win10 :system="system"></Win10>
     </div>
+</ClientOnly>
 </template>
 <script setup>
 import { onMounted } from "vue";
 import Apphello from "./apphello.vue";
-import { AddToDesktop, ClearDesktop, DragWindow } from "vue3-win10";
+import { System } from "vue3-win10";
+let system = new System({});
 onMounted(() => {
-    ClearDesktop()
-    AddToDesktop({
+    system.ClearDesktop()
+    system.AddToDesktop({
         name: 'HelloWord',
-        window: new DragWindow({
+        window: system.DragWindow({
             title: 'HelloWord',
             x: 0,
             y: 0,

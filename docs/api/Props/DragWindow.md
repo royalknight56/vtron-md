@@ -73,14 +73,16 @@ system.DragWindow({
       content: Test3
     })
 system.DragWindow({
-      isSFC: true,
-      content: 'http://localhost:3002/app'
-    })
-system.DragWindow({
       content: 'https://v3.cn.vuejs.org/api/global-api.html#h'
     })
 ```
 
+::: warning
+isSFC在0.3.3已经被废弃
+:::
+    
+
+<!-- 
 当为isSFC时，会从content指示的链接加载SFC组件，
 
 获取到JSON信息：
@@ -111,7 +113,7 @@ JSON.stringify({
 
   并将获取到的content作为窗口内容；
   
-  content是一个SFC字符串；
+  content是一个SFC字符串； -->
 ### windowInfo
 
 ```ts

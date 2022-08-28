@@ -48,7 +48,7 @@ createApp(App).use(win10).mount('#app')
 ```ts
 // system.ts
 import { System } from "vue3-win10";
-let system = new System();
+let system = new System({});
 export {
   system
 }
@@ -119,7 +119,6 @@ import { system } from './system'
 
 ```ts
 import { system } from './system'
-import { AddToDesktop, ClearDesktop,DragWindow } from "vue3-win10";
 ```
 
 之后接着引入新建的vue组件，和一个图标素材

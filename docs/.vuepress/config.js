@@ -1,10 +1,3 @@
-/*
- * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-07-14 20:04:40
- * @Description: 
- * @FilePath: /vue3-win10-md/docs/.vuepress/config.js
- */
-
 module.exports = {
     title: 'vue3-win10',
     base: "/",

@@ -6,13 +6,15 @@
 -->
 # 配置项
 怎么使用
-在use时，传入配置项
+在创建system对象时，传入
+
 ```ts
-createApp(App).use(win10,{
+let system = new System({
     if_logo_show: false,
     start_time:1200,
     start_menu_logo: menuicon
-}).mount('#app')
+});
+
 ```
 
 ## start_time
@@ -35,7 +37,7 @@ start_menu_logo:'default',
 import testicon from "../assets/computer.ico";
 start_menu_logo:testicon
 ```
-## login
+<!-- ## login
 设置登录用户名
 ```ts
 login:<loginOption|null>null
@@ -48,7 +50,7 @@ loginOption:{
 ```
 login是一个对象，当设置为null时，不显示锁屏界面
 当设置了用户名和密码时，必须使用密码解锁。
-（这只是前端UI解锁，并没有安全设置）
+（这只是前端UI解锁，并没有安全设置） -->
 
 ## backimg
 设置桌面壁纸

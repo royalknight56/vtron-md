@@ -36,9 +36,9 @@ restartPower()
 ```
 重启，屏幕黑屏后，页面刷新reload
 
-### mountUnlockEvent
+<!-- ### mountUnlockEvent
 
 ```ts
 mountUnlockEvent(name:string,fun:Function)
 ```
-挂载一个解锁事件，当用户输入锁屏解锁密码之后，会在fun中接收到
+挂载一个解锁事件，当用户输入锁屏解锁密码之后，会在fun中接收到 -->
