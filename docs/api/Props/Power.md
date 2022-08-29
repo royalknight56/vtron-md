@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-07-15 10:56:04
+ * @LastEditTime: 2022-08-29 14:49:12
  * @Description: 
 -->
 # Power
@@ -25,14 +25,14 @@ system.Power.closePower()
 ### openPower
 
 ```ts
-openPower()
+system.Power.openPower()
 ```
 开机，屏幕亮起，载入loading页面，之后进入主页面
 
 ### restartPower
 
 ```ts
-restartPower()
+system.Power.restartPower()
 ```
 重启，屏幕黑屏后，页面刷新reload
 

@@ -1,8 +1,3 @@
-<!--
- * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-08-25 10:20:32
- * @Description: 
--->
 # DragWindow
 
 使用 DragWindow 方法，会创建一个窗口
@@ -235,21 +230,6 @@ window.isMaximized()
 ```
 
 
-### isMaximized
-
-isMaximized(): void;
-
-得到窗口是否为最大化
-
-usage:
-
-```ts
-let window = system.DragWindow({
-      content: Test
-    })
-window.isMaximized()
-```
-
 ### isMinimized
 
 isMinimized(): void;
@@ -281,6 +261,21 @@ let window = system.DragWindow({
 window.maximize()
 ```
 
+### unmaximize
+
+unmaximize(): void;
+
+使窗口取消最大化窗口
+
+usage:
+
+```ts
+let window = system.DragWindow({
+      content: Test
+    })
+window.unmaximize()
+```
+
 ### minimize
 
 minimize(): void;
@@ -297,6 +292,21 @@ window.minimize()
 ```
 
 
+### restore
+
+restore(): void;
+
+使窗口恢复（从最小化变为显示）
+
+usage:
+
+```ts
+let window = system.DragWindow({
+      content: Test
+    })
+window.restore()
+```
+
 ### moveTop
 
 moveTop(): void;
@@ -310,4 +320,83 @@ let window = system.DragWindow({
       content: Test
     })
 window.moveTop()
+```
+
+### isNormal
+
+isNormal(): void;
+
+判断窗口是否为普通窗口状态（非最大化，非最小化）
+
+usage:
+
+```ts
+let window = system.DragWindow({
+      content: Test
+    })
+window.isNormal()
+```
+
+### setSize
+
+setSize(width: number, height: number): void;
+
+设置窗口尺寸（无法超过屏幕）
+
+usage:
+
+```ts
+let window = system.DragWindow({
+      content: Test
+    })
+window.setSize(300,200)
+```
+
+### getSize
+
+getSize(): {
+  width: number, height: number
+};
+
+得到窗口尺寸
+
+usage:
+
+```ts
+let window = system.DragWindow({
+      content: Test
+    })
+window.getSize()
+```
+
+### setPosition
+
+setPosition(x: number, y: number):void;
+
+设置窗口位置
+
+usage:
+
+```ts
+let window = system.DragWindow({
+      content: Test
+    })
+window.setPosition(100,100)
+```
+
+### getPosition
+
+getPosition(): {
+  x: number, y: number
+};
+
+设置窗口位置
+
+usage:
+
+```ts
+let window = system.DragWindow({
+      content: Test
+    })
+window.getPosition()
 ```

@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-08-25 10:15:04
+ * @LastEditTime: 2022-08-29 14:51:30
  * @Description: 
 -->
 # ContextMenu
@@ -21,7 +21,7 @@ system.ContextMenu
 ### callMenu
 
 ```ts
-callMenu(e: MouseEvent,list:UnwrapNestedRefs<Array<menuItem>>)
+system.ContextMenu.callMenu(e: MouseEvent,list:Array<menuItem>)
 ```
 
 |  名称   | 含义  |

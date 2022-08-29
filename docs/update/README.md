@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-08-25 10:14:30
+ * @LastEditTime: 2022-08-29 14:54:17
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/update/README.md
 -->
@@ -9,6 +9,11 @@
 <!-- # Usage -->
 # 更新 
 由于目前版本在1.0以下，所以版本不稳定，有可能会发生较大的变化
+## npm版本 0.3.4
+
+修复最大最小化问题。
+DragWindow增加新API
+
 ## npm版本 0.3.3
 
 修复打包问题。

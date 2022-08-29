@@ -1,8 +1,3 @@
-<!--
- * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-07-14 20:04:12
- * @Description: 
--->
 # Notify
 弹出右下角提示
 
@@ -12,5 +7,5 @@
 system.Notify.notify('title',"testtest")
 ```
 ```ts
-constructor(title:string,messages:string)
+system.Notify.notify(title:string,messages:string)
 ```

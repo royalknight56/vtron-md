@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-07-14 20:06:42
+ * @LastEditTime: 2022-08-29 14:51:54
  * @Description: 
 -->
 # Desktop
@@ -29,7 +29,6 @@ appInfo:{
 ## ClearDesktop
 
 ```ts
-ClearDesktop()
 system.ClearDesktop()
 ```
 用于清空桌面图标，
