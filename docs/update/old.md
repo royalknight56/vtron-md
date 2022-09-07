@@ -1,11 +1,54 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-06-12 12:41:22
+ * @LastEditTime: 2022-09-01 16:57:37
  * @Description: 
 -->
 ## 过早版本
 
-### npm版本 0.1.8
+## npm版本 0.2.3
+
+添加按钮配置，可以选择右上角按钮。
+
+添加刷新按钮。
+
+## npm版本 0.2.3
+
+添加按钮配置，可以选择右上角按钮。
+
+添加刷新按钮。
+
+
+## npm版本 0.2.2
+
+支持系统锁屏页面
+
+系统设置页面可以对设置进行改动
+
+config在设置中会被本地存储
+
+修复在最大化时窗口位置会被拖动的bug
+
+修复火狐浏览器下背景图片会被拖动的bug
+
+优化样式，样式进行隔离
+
+优化窗口样式，创建窗口的堆叠上下文
+
+优化DWM的成员函数可访问性
+
+## npm版本 0.2.1
+在tailwindcss框架下使用时，样式会被污染，现在对部分样式进行适配,进行了样式reset
+
+## npm版本 0.2.0
+新增Notify功能。可在右下角显示提示信息。
+
+## npm版本 0.1.9
+贴边吸附
+
+默认图标
+
+
+## npm版本 0.1.8
 
 #### 0.1.8-beta.4
 
@@ -38,7 +81,7 @@ MenuCtrl.getInstance().callMenu(e,
 isScalable?:boolean
 
 
-### npm版本 0.1.6
+## npm版本 0.1.6
 
 0.1.6 变化较大
 
@@ -94,7 +137,7 @@ let winId = <string>inject('windowId')
 
 
 
-### npm版本 0.1.5
+## npm版本 0.1.5
 
 增加backimg配置项，可选择设置桌面背景
 ```js
@@ -103,7 +146,7 @@ backimg:backimg,
 ```
 
 
-### npm版本 0.1.4
+## npm版本 0.1.4
 
 增加start_menu_logo配置项，可选择设置左下角开始菜单logo
 
@@ -111,11 +154,11 @@ backimg:backimg,
 适配移动端
 磁贴底部降级适配
 
-### npm版本 0.1.3
+## npm版本 0.1.3
 
 vue支持3.2
 
-### npm版本 0.1.2
+## npm版本 0.1.2
 
 #### DragWindow onWindowEvent
 ```ts
@@ -140,7 +183,7 @@ DWM.getInstance().addWindowEventListener(props.id,'onResize',()=>{ console.log('
 
 双击事件问题
 
-### npm版本 0.1.1
+## npm版本 0.1.1
 更新内容:
 
 #### 重要：DragWindow类行为变化
@@ -198,7 +241,7 @@ let props = defineProps({
 ```
 在模版中，只需要获取到id，就可以通过DWM来获取到自身到其他属性
 
-### npm版本 0.1.0
+## npm版本 0.1.0
 更新内容:
 
 废弃 apptemp 属性

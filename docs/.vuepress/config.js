@@ -24,7 +24,6 @@ module.exports = {
                     children: [
                         '/api/Props/DragWindow.md',
                         '/api/Props/ContextMenu.md',
-                        '/api/Props/DWM.md',
                         '/api/Props/Notify.md',
                         '/api/Props/Power.md',
                     ]
@@ -38,12 +37,19 @@ module.exports = {
                 {
                     text: 'Function',
                     children: [
-                        '/api/Function/Desktop.md',]
+                        '/api/Function/Desktop.md',
+                        '/api/Function/GetWindow.md',]
+                    
                 },
                 {
                     text: 'Provide',
                     children: [
                         '/api/Provide/id.md',]
+                },
+                {
+                    text: 'Iframe',
+                    children: [
+                        '/api/Iframe/Message.md',]
                 },
             ],
             '/conf/': ['/conf/README.md'],

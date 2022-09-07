@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-08-29 14:51:54
+ * @LastEditTime: 2022-09-01 16:56:13
  * @Description: 
 -->
 # Desktop
@@ -34,3 +34,17 @@ system.ClearDesktop()
 用于清空桌面图标，
 
     建议在AddToDesktop之前使用ClearDesktop，防止开发时热更新导致图标越来越多
+
+## AddToStartupList
+
+用法同AddToDesktop，添加到开始菜单的列表中
+## ClearStartupList
+
+用法同ClearDesktop，清空开始菜单的列表
+## AddToMagnet
+
+用法同AddToDesktop，添加到开始菜单的磁贴中
+
+## ClearMagnet
+
+用法同ClearDesktop，清空开始菜单的磁贴
