@@ -36,7 +36,9 @@ interface option {
     title?: string,
     icon?: string,
     isScalable?:boolean,
-    isSFC?:boolean,
+    frame: boolean,
+    transparent: boolean,
+    center: boolean,
     buttons?:WindowButton[]
     // type WindowButton = 'flush'|'close'|'min'|'max'
 }
@@ -56,7 +58,9 @@ system.DragWindow(option: option, use?: any)
 | title  | 窗口名称 | '未命名窗口' |
 | icon  | 窗口图标 |'' |
 | isScalable  | 窗口是否为可缩放 |true |
-| isSFC  | 窗口是否为SFC组件 |false |
+| frame  | 窗口是否有边框 |true |
+| transparent  | 窗口是否透明 |false |
+| center  | 窗口是否居中 |false |
 | buttons  | 窗口按钮 | ['close','min','max'] flush刷新按钮，close关闭按钮 |
 
 
@@ -137,7 +141,6 @@ interface WindowInfo {
     title?: string,
     icon?: string,
     isScalable?: boolean,
-    isSFC?:boolean,
 }
 
 ```
@@ -181,13 +184,7 @@ usage:
 
 ```ts
 let next = system.DragWindow({
-      title: '浏览器',
-      icon: brow,
-      width: 600,
-      height: 500,
-      x:0,
-      y:0,
-      content: Test3
+      content: Test
     })
 next.show()
 ```
@@ -203,13 +200,7 @@ usage:
 
 ```ts
 let next = system.DragWindow({
-      title: '浏览器',
-      icon: brow,
-      width: 600,
-      height: 500,
-      x:0,
-      y:0,
-      content: Test3
+      content: Test
     })
 next.destory()
 ```
@@ -399,4 +390,33 @@ let window = system.DragWindow({
       content: Test
     })
 window.getPosition()
+```
+
+### center
+
+center()
+
+使窗口移动到屏幕中心
+
+usage:
+
+```ts
+let window = system.DragWindow({
+      content: Test
+    })
+window.center()
+```
+### setFullScreen
+
+setFullScreen(isFull: boolean)
+
+设置窗口是否为全屏
+
+usage:
+
+```ts
+let window = system.DragWindow({
+      content: Test
+    })
+window.setFullScreen(true)
 ```
