@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-09-15 11:25:46
+ * @LastEditTime: 2022-09-22 12:27:07
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/guide/README.md
 -->
@@ -132,10 +132,10 @@ import computericon from "./assets/computer.ico"
 
 ```ts
 system.AddToDesktop({
-  name: '我的电脑',
+  name: 'HelloWorld',
   icon: computericon,
   window: system.DragWindow({
-      title: '我的电脑',
+      title: 'HelloWorld',
       icon: computericon,
       content: Test1
     })
