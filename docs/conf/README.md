@@ -54,9 +54,17 @@ login是一个对象，当设置为null时，不显示锁屏界面
 
 ## backimg
 设置桌面壁纸
+
 ```ts
 backimg:'default',
 
 import backimg from "./assets/back.jpg"
 backimg:backimg
+```
+
+如果设置的是hash Color
+则桌面会变为纯色
+
+```ts
+backimg:'#000000'
 ```
