@@ -1,6 +1,6 @@
 <!--
  * @Author: zhangweiyuan-Royal
- * @LastEditTime: 2022-07-15 10:46:55
+ * @LastEditTime: 2022-09-22 12:27:07
  * @Description: 
  * @FilePath: /vue3-win10-md/docs/guide/README.md
 -->
@@ -132,10 +132,10 @@ import computericon from "./assets/computer.ico"
 
 ```ts
 system.AddToDesktop({
-  name: '我的电脑',
+  name: 'HelloWorld',
   icon: computericon,
   window: system.DragWindow({
-      title: '我的电脑',
+      title: 'HelloWorld',
       icon: computericon,
       content: Test1
     })
@@ -183,3 +183,23 @@ let window = system.DragWindow({
 ```ts
 window.show()
 ```
+
+## QA
+### 一，为什么需要传入system
+
+之前，框架没有system，造成了状态的混乱。如果同一个页面上要初始化两个系统，这两个系统是相同的状态。
+
+现在，有了system对象，可以做到不同的系统，状态不同。
+
+### 二，初始化之后什么都没有
+
+因为框架目前主要提供了窗口能力，其他的需要在此基础上开发。
+
+### 三，能做什么
+可以实现不同框架的前端应用的融合，微前端概念。
+
+可以实现linux系统面板。后台管理系统等等。
+
+### 四，***支持吗
+
+目前正在努力支持，由于人力问题，支持的可能不是很及时。
