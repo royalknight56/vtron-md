@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /guide/what-is-vtron
+      link: /guide/how-to-use-vtron
     - theme: alt
       text: View on GitHub
       link: https://github.com/royalknight56/vtron

@@ -11,7 +11,7 @@ module.exports = {
             { text: '主页', link: '/' },
             { text: '教程', link: '/guide/how-to-use-vtron.md' },
             { text: 'API', link: '/api/BrowserWindow.md' },
-            { text: '更新', link: '/update/' },
+            { text: '更新', link: '/update/README.md' },
             { text: 'GitHub', link: 'https://github.com/royalknight56/vtron' },
             { text: 'Demo', link: 'http://myim.online' },
         ],
