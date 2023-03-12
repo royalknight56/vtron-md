@@ -11,6 +11,7 @@ module.exports = {
             { text: '主页', link: '/' },
             { text: '教程', link: '/guide/how-to-use-vtron.md' },
             { text: 'API', link: '/api/BrowserWindow.md' },
+            { text: 'VtronPlus', link: '/plus/VtronPlus.md' },
             { text: '更新', link: '/update/README.md' },
             { text: 'GitHub', link: 'https://github.com/royalknight56/vtron' },
             { text: 'Demo', link: 'http://myim.online' },
@@ -18,17 +19,26 @@ module.exports = {
         sidebar: {
             '/api/': [
                 {
-                    text: 'BrowserWindow',
-                    link: '/api/BrowserWindow.md',
-                },
-                {
                     text: 'System',
                     link: '/api/System.md',
+                },
+                {
+                    text: 'fs',
+                    link: '/api/fs.md',
+                },
+                {
+                    text: 'event',
+                    link: '/api/event.md',
+                },
+                {
+                    text: 'BrowserWindow',
+                    link: '/api/BrowserWindow.md',
                 },
                 {
                     text: 'Notify',
                     link: '/api/Notify.md',
                 },
+                
             ],
             '/guide/': [
                 { text: 'how-to-use-vtron?', link: '/guide/how-to-use-vtron.md' },
