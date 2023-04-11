@@ -18,8 +18,11 @@ constructor(option:{
     resizable: boolean;
     frame: boolean;
     fullscreen: boolean;
+    minimizable: boolean;
+    alwaysOnTop: boolean;
+    skipTaskbar: boolean;
     backgroundColor: string;
-}):void
+})
 ```
 
 Create a new BrowserWindow instance.
@@ -40,6 +43,95 @@ const win = new BrowserWindow({
     resizable: true
 });
 ```
+
+
+`BrowserWindow` 是 vtron 中创建窗口的类，它可以通过传入不同的构建参数来定制化窗口的外观和行为。在本文档中，我们将介绍 BrowserWindow 构建参数的各个属性和用法，以便您更好地了解如何使用它们来创建您的自定义窗口。
+
+## option
+Type: Object
+
+option 对象包含 BrowserWindow 构建参数的各个属性。以下是这些属性的详细说明。
+
+### title
+Type: string
+
+窗口的标题。
+
+### content
+Type: ReturnType<typeof defineComponent> | string
+
+窗口显示的内容。可以传入一个 Vue 组件或者一个网址。
+
+### config
+Type: any
+
+窗口的配置对象。这个对象会被传递给窗口渲染进程，可以在窗口内部使用。
+
+### icon
+Type: string
+
+窗口的图标路径。
+
+### width
+Type: number
+
+窗口的宽度，以像素为单位。
+
+### height
+Type: number
+
+窗口的高度，以像素为单位。
+
+### x
+Type: number
+
+窗口的横坐标，以像素为单位。
+
+### y
+Type: number
+
+窗口的纵坐标，以像素为单位。
+
+### center
+Type: boolean
+
+是否将窗口居中显示。
+
+### resizable
+Type: boolean
+
+窗口是否可以调整大小。
+
+### frame
+Type: boolean
+
+是否显示窗口边框。
+
+### fullscreen
+Type: boolean
+
+窗口是否全屏显示。
+
+### minimizable
+Type: boolean
+
+窗口是否可以最小化。
+
+### alwaysOnTop
+Type: boolean
+
+窗口是否总在顶部显示。
+
+### skipTaskbar
+Type: boolean
+
+是否在任务栏中隐藏窗口。
+
+### backgroundColor
+Type: string
+
+窗口的背景颜色。
+
 
 ## id
 
