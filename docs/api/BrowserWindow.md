@@ -25,12 +25,11 @@ constructor(option:{
 })
 ```
 
-Create a new BrowserWindow instance.
 
-usage:
+BrowserWindow 是 vtron 中创建窗口的类，它可以通过传入不同的构建参数来定制化窗口的外观和行为。在本文档中，我们将介绍 BrowserWindow 构建参数的各个属性和用法，以便您更好地了解如何使用它们来创建您的自定义窗口。
 
 ```ts
-import ContentVue from './content.vue';
+import ContentVue from './content.vue'
 const win = new BrowserWindow({
     title: 'test',
     content: ContentVue,
@@ -41,14 +40,11 @@ const win = new BrowserWindow({
     y: 100,
     center: true,
     resizable: true
-});
+})
+
 ```
 
-
-`BrowserWindow` 是 vtron 中创建窗口的类，它可以通过传入不同的构建参数来定制化窗口的外观和行为。在本文档中，我们将介绍 BrowserWindow 构建参数的各个属性和用法，以便您更好地了解如何使用它们来创建您的自定义窗口。
-
-## option
-Type: Object
+## option 
 
 option 对象包含 BrowserWindow 构建参数的各个属性。以下是这些属性的详细说明。
 
@@ -58,7 +54,7 @@ Type: string
 窗口的标题。
 
 ### content
-Type: ReturnType<typeof defineComponent> | string
+Type: ReturnType < typeof defineComponent > | string
 
 窗口显示的内容。可以传入一个 Vue 组件或者一个网址。
 
