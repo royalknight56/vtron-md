@@ -6,15 +6,14 @@ titleTemplate: Vtron
 
 hero:
   name: Vtron
-  # text: Vtron is a tool for building Vue.js applications in windows10`s style.
-  text: Vtron 是一个用于构建 Windows10 风格 Vue.js 应用的框架。
-  tagline: 简单，强大，高效
+  text: Vtron is a tool for building Vue.js applications in windows10`s style.
+  tagline: Simple, powerful, and performant.
   actions:
     - theme: brand
-      text: 开始
+      text: Get Started
       link: /guide/how-to-use-vtron
     - theme: alt
-      text: GitHub
+      text: View on GitHub
       link: https://github.com/royalknight56/vtron
 
 # features:

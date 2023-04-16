@@ -2,6 +2,17 @@ module.exports = {
     title: 'Vtron',
     base: "/",
     description: 'Just playing around',
+    locales: {
+        root: {
+          label: 'Chinese',
+          lang: 'zh-CN',
+        },
+        en: {
+            label: 'English',
+            lang: 'en-US',
+            link: '/en/' // default /en/ -- shows on navbar translations menu, can be external
+        }
+      },
     // 配置默认主题
     themeConfig: {
         displayAllHeaders: true, // 默认值：false
