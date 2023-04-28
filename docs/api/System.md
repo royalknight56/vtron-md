@@ -15,6 +15,29 @@ const system = useSystem();
 ## constructor
 
 ```typescript
+
+export interface WinAppOptions {
+    name:string;
+    icon?:string;
+    window: {
+        title: string
+        content: BrowserWindowContent,
+        config: any
+        icon: string
+        width: number
+        height: number
+        x: number
+        y: number
+        center: boolean
+        resizable: boolean
+        minimizable: boolean
+        frame: boolean
+        fullscreen: boolean
+        alwaysOnTop: boolean
+        skipTaskbar: boolean
+        backgroundColor: string
+    }
+}
 interface SystemOptions {
     logo?:string;
     background?:string;
@@ -30,8 +53,23 @@ logo：可以设置系统的logo，如果不设置则使用默认的logo
 
 ```typescript
 import { System } from "vtron";
+import vtronLogoIcon from "./assets/vtron-icon-nobg.png"
+import TestButton from "./apps/TestButton.vue"
 const system = new System({
-    //...options
+    logo: vtronLogoIcon,
+    background: "https://source.unsplash.com/random/1920x1080",
+    desktop: [
+      {
+        name: '测试按钮',
+        icon: testicon,
+        window: {
+          content: TestButton,
+          title: "测试按钮",
+          icon: testicon,
+          center: true,
+        },
+      },
+    ]
 });
 ```
 

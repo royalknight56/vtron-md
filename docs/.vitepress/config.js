@@ -52,7 +52,8 @@ module.exports = {
                 
             ],
             '/guide/': [
-                { text: 'how-to-use-vtron?', link: '/guide/how-to-use-vtron.md' },
+                { text: '如何使用', link: '/guide/how-to-use-vtron.md' },
+                { text: '常见问题', link: '/guide/qa.md' },
                 // { text: 'What is vtron?', link: '/guide/what-is-vtron.md' },
             ],
         }

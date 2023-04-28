@@ -6,22 +6,22 @@ type:
     
 ```ts
 constructor(option:{
-    title: string;
-    content: ReturnType<typeof defineComponent> | string,
-    config?: any;
-    icon: string;
-    width: number;
-    height: number;
-    x: number;
-    y: number;
-    center: boolean;
-    resizable: boolean;
-    frame: boolean;
-    fullscreen: boolean;
-    minimizable: boolean;
-    alwaysOnTop: boolean;
-    skipTaskbar: boolean;
-    backgroundColor: string;
+    title: string
+    content:  ReturnType<typeof defineComponent> | string,
+    config?: any
+    icon: string
+    width: number
+    height: number
+    x: number
+    y: number
+    center: boolean
+    resizable: boolean
+    minimizable: boolean
+    frame: boolean
+    fullscreen: boolean
+    alwaysOnTop: boolean
+    skipTaskbar: boolean
+    backgroundColor: string
 })
 ```
 
@@ -44,7 +44,7 @@ const win = new BrowserWindow({
 
 ```
 
-## option 
+## constructor option 
 
 option 对象包含 BrowserWindow 构建参数的各个属性。以下是这些属性的详细说明。
 
@@ -146,23 +146,6 @@ const win = new BrowserWindow();
 console.log(win.id);
 ```
 
-## content
-
-type:
-    
-```ts
-content:ReturnType<typeof defineComponent> | string
-```
-
-The content of the window.
-
-usage:
-
-```ts
-const win = new BrowserWindow();
-
-```
-
 
 ## show
 
@@ -171,8 +154,7 @@ type:
 ```ts
 show():void
 ```
-
-Show the window.
+显示窗口，调用这个方法后，窗口会显示在桌面上
 
 usage:
 
@@ -223,7 +205,7 @@ type:
 isVisible():boolean
 ```
 
-Returns whether the window is visible to the user.
+返回窗口是否可视
 
 usage:
 
@@ -240,7 +222,7 @@ type:
 isDestroyed():boolean
 ```
 
-Returns whether the window has been destroyed.
+返回窗口是否已经被销毁
 
 usage:
 
@@ -257,7 +239,7 @@ type:
 isMaximized():boolean
 ```
 
-Returns whether the window is maximized.
+返回窗口是否最大化
 
 usage:
 
@@ -274,7 +256,8 @@ type:
 isMaximizable():boolean
 ```
 
-Returns whether the window is maximizable.
+
+返回窗口是否可以最大化
 
 usage:
 
@@ -291,7 +274,7 @@ type:
 isMinimized():boolean
 ```
 
-Returns whether the window is minimized.
+返回窗口是否最小化
 
 usage:
 
@@ -308,7 +291,7 @@ type:
 isMinimizable():boolean
 ```
 
-Returns whether the window is minimizable.
+返回窗口是否可以最小化
 
 usage:
 
@@ -325,7 +308,7 @@ type:
 isNormal():boolean
 ```
 
-Returns whether the window is in normal state.
+返回窗口是否处于正常状态，即不是最大化或最小化
 
 usage:
 
@@ -342,7 +325,7 @@ type:
 isResizable():boolean
 ```
 
-Returns whether the window is resizable.
+返回窗口是否可以调整大小
 
 usage:
 
@@ -359,7 +342,7 @@ type:
 center():void
 ```
 
-Moves window to the center of the screen.
+把窗口移动到屏幕中心
 
 usage:
 
@@ -376,7 +359,7 @@ type:
 restore():void
 ```
 
-Restores the window from minimized state to its previous state.
+把窗口从最小化状态恢复到之前的状态
 
 usage:
 
@@ -393,7 +376,8 @@ type:
 setSize(width:number,height:number):void
 ```
 
-Sets the window's size.
+设置窗口的大小
+
 
 usage:
 
@@ -410,7 +394,7 @@ type:
 getSize():[number,number]
 ```
 
-Returns the window's size.
+返回窗口的大小
 
 usage:
 
@@ -427,7 +411,7 @@ type:
 setTitle(title:string):void
 ```
 
-Sets the window's title.
+设置窗口的标题
 
 usage:
 
@@ -444,7 +428,7 @@ type:
 getTitle():string
 ```
 
-Returns the window's title.
+返回窗口的标题
 
 usage:
 
@@ -461,7 +445,7 @@ type:
 setPosition(x:number,y:number):void
 ```
 
-Sets the window's position.
+设置窗口的位置
 
 usage:
 
@@ -478,7 +462,7 @@ type:
 getPosition():[number,number]
 ```
 
-Returns the window's position.
+返回窗口的位置
 
 usage:
 
@@ -495,7 +479,7 @@ type:
 maximize():void
 ```
 
-Maximizes the window.
+最大化窗口
 
 usage:
 
@@ -512,7 +496,7 @@ type:
 minimize():void
 ```
 
-Minimizes the window.
+最小化窗口
 
 usage:
 
@@ -529,7 +513,7 @@ type:
 setResizable(resizable:boolean):void
 ```
 
-Sets whether the window is resizable.
+设置窗口是否可以调整大小
 
 usage:
 
@@ -546,7 +530,7 @@ type:
 setMaximizable(maximizable:boolean):void
 ```
 
-Sets whether the window is maximizable.
+设置窗口是否可以最大化
 
 usage:
 
@@ -563,7 +547,7 @@ type:
 setMinimizable(minimizable:boolean):void
 ```
 
-Sets whether the window is minimizable.
+设置窗口是否可以最小化
 
 usage:
 
