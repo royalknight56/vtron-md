@@ -1,5 +1,10 @@
 # fs
 
+fs 是用于在浏览器端进行文件操作的库，使用了类似于node fs的接口，文件保存在内部的indexedDB中。保存时间和大小相较于localStorage都有明显的提升
+
+在应用中 fs需要等待system完成初始化工作之后才能使用，所以，在new System的运行帧中，fs是不可用的。可以调用system.whenReady()来等待system初始化完成。
+
+
 ## readFile
 
 读取一个文件的内容
