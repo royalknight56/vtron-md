@@ -38,12 +38,24 @@ module.exports = {
                     link: '/api/fs.md',
                 },
                 {
+                    text: 'path',
+                    link: '/api/path.md',
+                },
+                {
                     text: 'event',
                     link: '/api/event.md',
                 },
                 {
                     text: 'BrowserWindow',
                     link: '/api/BrowserWindow.md',
+                },
+                {
+                    text: 'Dialog',
+                    link: '/api/Dialog.md',
+                },
+                {
+                    text: 'Shell',
+                    link: '/api/Shell.md',
                 },
                 {
                     text: 'Notify',

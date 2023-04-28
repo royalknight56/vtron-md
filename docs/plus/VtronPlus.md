@@ -31,25 +31,6 @@ system.use(vtronPlus)
 
 Provides "my computer", you can view the current file system and perform some operations on the file.
 
-### 终端(Terminal)
-
-提供了一个终端，可以执行一些命令
-
-Provides a terminal that can execute some commands
-
-可以执行的命令有：
-
-The following commands can be executed:
-
-1. ls
-2. cd
-3. open
-4. touch
-5. cat
-6. echo
-7. rm
-8. sh
-9. clear
 
 ### 图片浏览器(Image Browser)
 
