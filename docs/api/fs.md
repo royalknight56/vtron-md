@@ -4,6 +4,26 @@ fs 是用于在浏览器端进行文件操作的库，使用了类似于node fs�
 
 在应用中 fs需要等待system完成初始化工作之后才能使用，所以，在new System的运行帧中，fs是不可用的。可以调用system.whenReady()来等待system初始化完成。
 
+```typescript
+class VtronFileInfo {
+    isFile: boolean = true;
+    isDirectory = false;
+    isSymlink = false;
+    size = 0;
+    mtime = new Date();
+    atime = new Date();
+    birthtime = new Date();
+    constructor(isFile?: boolean, isDirectory?: boolean, isSymlink?: boolean, size?: number, mtime?: Date, atime?: Date, birthtime?: Date) {
+    }
+}
+class VtronFile {
+    path: string;
+    parentPath: string;
+    content: string;
+    constructor(path: string, content: string, 
+    info: Partial<VtronFileInfo>,);
+}
+```
 
 ## readFile
 
@@ -30,18 +50,12 @@ write content to a file, if the file is not exist, it will be created
 ```typescript
  writeFile(path: string, par: {
         content: string;
-        name: string;
-        icon: string;
-        type: string;
     }): Promise<void>;
 
 import { useSystem } from "vtron";
 const system = useSystem();
 system.fs.writeFile("path/to/file",{
     content:"hello world",
-    name:"hello.txt",
-    icon:"pngraw",
-    type:"text/plain"
 })
 ```
 
@@ -80,14 +94,23 @@ system.fs.mkdir("path/to/folder")
 read all files and folders in a path
 
 ```typescript
+class VtronFileInfo {
+    isFile: boolean = true;
+    isDirectory = false;
+    isSymlink = false;
+    size = 0;
+    mtime = new Date();
+    atime = new Date();
+    birthtime = new Date();
+    constructor(isFile?: boolean, isDirectory?: boolean, isSymlink?: boolean, size?: number, mtime?: Date, atime?: Date, birthtime?: Date) {
+    }
+}
 class VtronFile {
     path: string;
     parentPath: string;
     content: string;
-    name: string;
-    icon: string;
-    type: string;
-    constructor(path: string, parentPath: string, content: string, name: string, icon: string, type: string);
+    constructor(path: string, content: string, 
+    info: Partial<VtronFileInfo>,);
 }
 
 readdir(path: string): Promise<VtronFile[]>;
@@ -147,19 +170,6 @@ import { useSystem } from "vtron";
 const system = useSystem();
 system.fs.unlink("path/to/file")
 ```
-## rmdir
-
-删除指定路径的文件夹，这个操作会删除这个文件夹下的所有文件和文件夹
-
-delete a folder, this operation will delete all files and folders in this folder
-
-```typescript
-rmdir(path: string): Promise<void>;
-
-import { useSystem } from "vtron";
-const system = useSystem();
-system.fs.rmdir("path/to/folder")
-```
 
 ## rename
 
@@ -175,3 +185,16 @@ const system = useSystem();
 system.fs.rename("path/to/file","path/to/new/file")
 ```
 
+## rmdir
+
+删除指定路径的文件夹，这个操作会删除这个文件夹下的所有文件和文件夹
+
+delete a folder, this operation will delete all files and folders in this folder
+
+```typescript
+rmdir(path: string): Promise<void>;
+
+import { useSystem } from "vtron";
+const system = useSystem();
+system.fs.rmdir("path/to/folder")
+```

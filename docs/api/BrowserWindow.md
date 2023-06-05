@@ -201,6 +201,43 @@ usage:
 const win = new BrowserWindow();
 win.destroy();
 ```
+## on
+
+监听一个事件
+```ts
+on(event: string, callback: Function) 
+```
+
+目前可以监听以下事件
+
+show: 窗口打开时触发
+
+close: 窗口关闭时触发
+## emit
+
+触发一个事件
+```ts
+emit(event: string, ...args: any[]) 
+```
+## isDisable
+
+type:
+    
+```ts
+isDisable():boolean
+```
+
+返回窗口是否被禁用
+
+窗口被禁用时，无法点击，无法拖动
+
+usage:
+
+```ts
+const win = new BrowserWindow();
+console.log(win.isDisable());
+```
+
 
 ## isVisible
 
@@ -338,6 +375,23 @@ usage:
 const win = new BrowserWindow();
 console.log(win.isResizable());
 ```
+## isFullScreen
+
+type:
+    
+```ts
+isFullScreen():boolean
+```
+
+返回窗口是否全屏
+
+usage:
+
+```ts
+const win = new BrowserWindow();
+console.log(win.isFullScreen());
+```
+
 
 ## center
 
@@ -373,24 +427,6 @@ const win = new BrowserWindow();
 win.restore();
 ```
 
-## setSize
-
-type:
-    
-```ts
-setSize(width:number,height:number):void
-```
-
-设置窗口的大小
-
-
-usage:
-
-```ts
-const win = new BrowserWindow();
-win.setSize(100,100);
-```
-
 ## getSize
 
 type:
@@ -408,23 +444,6 @@ const win = new BrowserWindow();
 console.log(win.getSize());
 ```
 
-## setTitle
-
-type:
-    
-```ts
-setTitle(title:string):void
-```
-
-设置窗口的标题
-
-usage:
-
-```ts
-const win = new BrowserWindow();
-win.setTitle('title');
-```
-
 ## getTitle
 
 type:
@@ -440,23 +459,6 @@ usage:
 ```ts
 const win = new BrowserWindow();
 console.log(win.getTitle());
-```
-
-## setPosition
-
-type:
-    
-```ts
-setPosition(x:number,y:number):void
-```
-
-设置窗口的位置
-
-usage:
-
-```ts
-const win = new BrowserWindow();
-win.setPosition(100,100);
 ```
 
 ## getPosition
@@ -509,6 +511,73 @@ usage:
 const win = new BrowserWindow();
 win.minimize();
 ```
+
+
+## setSize
+
+type:
+    
+```ts
+setSize(width:number,height:number):void
+```
+
+设置窗口的大小
+
+
+usage:
+
+```ts
+const win = new BrowserWindow();
+win.setSize(100,100);
+```
+
+## setTitle
+
+type:
+    
+```ts
+setTitle(title:string):void
+```
+
+设置窗口的标题
+
+usage:
+
+```ts
+const win = new BrowserWindow();
+win.setTitle('title');
+```
+
+
+## setPosition
+
+type:
+    
+```ts
+setPosition(x:number,y:number):void
+```
+
+设置窗口的位置
+
+usage:
+
+```ts
+const win = new BrowserWindow();
+win.setPosition(100,100);
+```
+
+## setDisable
+
+type:
+    
+```ts
+setDisable(disable:boolean):void
+```
+
+设置窗口是否禁用
+
+窗口被禁用时，无法点击，无法拖动
+
 
 ## setResizable
 

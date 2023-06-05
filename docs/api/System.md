@@ -283,13 +283,18 @@ system.shutdown();
 
 ## reboot
 
+重启系统，将系统关机，并且刷新页面
+
+
+## recover
+
 ```typescript
-reboot()
+recover()
 ```
 
 恢复系统，恢复的过程是：清除本地的localStorage，清楚本地的文件系统。
 
-reboot system, the process is: clear localStorage, clear file system.
+recover system, the process is: clear localStorage, clear file system.
 
 Usage:
 
@@ -297,6 +302,15 @@ Usage:
 import { System } from "vtron";
 const system = new System();
 
-system.reboot();
+system.recover();
 ```
 
+## serializeState
+
+序列化系统状态，将系统的文件系统保存为json字符串
+
+之后可以通过反序列化来恢复系统状态
+
+## deserializeState
+
+反序列化系统状态，将系统的文件系统从json字符串中恢复
