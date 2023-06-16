@@ -2,6 +2,15 @@ module.exports = {
     title: 'Vtron',
     base: "/",
     description: 'Just playing around',
+    head:[
+        [
+            'script',
+            { async : true,
+            src:"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7516773950965588",
+            crossorigin:"anonymous"
+        },
+        ]
+    ],
     locales: {
         root: {
           label: 'Chinese',
