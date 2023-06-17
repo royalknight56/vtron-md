@@ -114,6 +114,20 @@ system.fs.readFile("path/to/file").then((data)=>{
 })
 ```
 
+## shell
+
+可以执行一段shell命令
+
+可以执行的命令详见api/shell
+
+### Usage
+
+```typescript
+import { useSystem } from "vtron";
+const system = useSystem();
+system.shell('cd C')
+```
+
 ## emitEvent
 
 在系统中提交一个事件

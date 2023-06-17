@@ -70,7 +70,10 @@ module.exports = {
                     text: 'Notify',
                     link: '/api/Notify.md',
                 },
-                
+                {
+                    text: '插件开发',
+                    link: '/api/Plugin.md',
+                },
             ],
             '/guide/': [
                 { text: '如何使用', link: '/guide/how-to-use-vtron.md' },

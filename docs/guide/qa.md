@@ -40,6 +40,21 @@ let browserWindow = inject<BrowserWindow>('browserWindow');
 
 使用文件系统，详见api/fs
 
+## exe文件是什么格式
+
+exe文件可以直接调用保存的窗口创建函数
+
+格式如下：
+
+// content: `link:${loc}:${options.name}:${options.icon?.length}:${options.icon}`
+
+## url文件是什么格式
+
+url文件打开后会直接显示设定的url
+
+格式如下
+
+// content: `link::${options.link}::icon::${options.icon}`
 ## 怎么让无边框窗口可以拖动
 
 调用vtron导出的makeDragable 方法

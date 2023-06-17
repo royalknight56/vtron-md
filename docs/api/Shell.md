@@ -66,6 +66,25 @@ handleCommand(command: string): Promise<void>;
 
 创建文件
 
+### node
+
+执行node函数
+
+node后面如果是文件地址，则执行文件中的内容
+
+如果是js代码，则执行js代码
+
+执行的时候，需要传入main函数
+
+例如：
+
+```js
+function main(system){
+    system.fs
+}
+```
+
+main函数可以接收一个参数，是当前的system。
 
 ## 输出重定向
 
