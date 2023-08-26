@@ -40,15 +40,18 @@ export interface WinAppOptions {
     }
 }
 interface SystemOptions {
-    logo?:string;
-    background?:string;
-    desktop?:WinAppOptions[];
-    magnet?:WinAppOptions[];
-    menulist?:WinAppOptions[];
-    lang?: string;
-    rootStyle?: any;
-    fs?: VtronFileInterface;
+  lang?: string;
+  logo?: string;
+  background?: string;
+  desktop?: WinAppOptions[];
+  magnet?: WinAppOptions[];
+  menulist?: WinAppOptions[];
+  rootStyle?: any;
+  fs?: VtronFileInterface;
+  shell?: ShellInterface;
 }
+
+
 constructor(options?: SystemOptions)
 ```
 
@@ -151,6 +154,30 @@ registerWatcher 是用来监听文件变化的，path 是一个正则表达式�
 
 removeFileSystem 是用来清除文件系统的，如果是例如接入了 Linux 的文件系统，可以不清除。
 
+## options-shell
+
+我们也把 shell 的能力抽象了出来，可以通过实现以下接口来实现自定义的 shell
+
+```typescript
+export interface ShellInterface {
+  prefix: string;
+  router: string;
+  on: (event: "message", callback: (...args: any[]) => void) => void;
+  emit: (event: "start", router: string, user: string) => void;
+  exec: (input: string) => Promise<void>;
+}
+```
+
+说明：prefix 是 shell 的前缀，
+
+router 是 shell 的路由，
+
+on 是监听事件，
+
+emit 是触发事件，
+
+exec 是执行命令
+
 ## whenReady
 
 ```typescript
@@ -204,6 +231,10 @@ const system = useSystem();
 system.shell("cd C");
 ```
 
+## emit
+
+同 emitEvent
+
 ## emitEvent
 
 在系统中提交一个事件
@@ -219,6 +250,10 @@ import { useSystem } from "vtron";
 const system = useSystem();
 system.emitEvent(event: string, ...args: any[])
 ```
+
+## on
+
+同 mountEvent
 
 ## mountEvent
 

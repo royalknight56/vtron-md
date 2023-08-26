@@ -25,6 +25,12 @@ system.whenReady().then(() => {
 
 ## 功能(Features)
 
+### Terminal
+
+提供了一个终端，可以在终端中执行命令
+
+Provides a terminal that can execute commands in the terminal
+
 ### 文件管理器(File Manager)
 
 提供了我的电脑，可以查看当前的文件系统，并对文件进行一些操作
@@ -52,6 +58,14 @@ Provides an image browser, which will automatically open when opening a file of 
 ### PDF 阅读器(PDF Reader)
 
 提供了一个 PDF 阅读器，在打开 type 为 .pdf 等类型的文件时会自动打开
+
+### DOC 浏览器(DOC Browser)
+
+提供了一个 DOC 浏览器，在打开 type 为 .doc 等类型的文件时会自动打开
+
+### XLS 浏览器(XLS Browser)
+
+提供了一个 XLS 浏览器，在打开 type 为 .xls 等类型的文件时会自动打开
 
 ### PPT 编辑器
 

@@ -1,69 +1,67 @@
 # vtron-plus
 
-## 介绍(Description)
-
-vtron-plus 是一个基于vtron的插件，它提供了一些常用的功能，比如文件管理器，系统信息，一些文件浏览器等功能
+## Description
 
 vtron-plus is a plugin based on vtron, it provides some common functions, such as file manager, system information, some file browsers, etc.
 
-
-## 安装(Installation)
+## Installation
 
 ```bash
 npm install vtron-plus
 ```
 
-## 使用(Usage)
+## Usage
 
 ```typescript
 import { System } from "vtron";
-import { vtronPlus } from "vtron-plus"
-let system = new System({
+import { vtronPlus } from "vtron-plus";
+let system = new System({});
+system.whenReady().then(() => {
+  system.use(VtronPlus);
 });
-system.use(vtronPlus)
 ```
 
-## 功能(Features)
+## Features
 
-### 文件管理器(File Manager)
-
-提供了我的电脑，可以查看当前的文件系统，并对文件进行一些操作
+### File Manager
 
 Provides "my computer", you can view the current file system and perform some operations on the file.
 
-### 终端(Terminal)
-
-提供了一个终端，可以执行一些命令
-
-Provides a terminal that can execute some commands
-
-可以执行的命令有：
-
-The following commands can be executed:
-
-1. ls
-2. cd
-3. open
-4. touch
-5. cat
-6. echo
-7. rm
-8. sh
-9. clear
-
-### 图片浏览器(Image Browser)
-
-提供了一个图片浏览器，在打开type为image/png等类型的文件时会自动打开
+### Image Browser
 
 Provides an image browser, which will automatically open when opening a file of type image/png, etc.
 
+### Text Editor
 
-### 文本编辑器(Text Editor)
+Provides a text editor, which will automatically open when opening a file of type text/plain, etc.
 
-提供了一个文本编辑器，在打开type为text/plain等类型的文件时会自动打开
+### Video Player
 
-<!-- ### 视频播放器(Video Player)
-### 音频播放器(Audio Player)
+Able to play videos in mp4 format.
+
+### Audio Player
+
+Able to play audio in mp3 format.
+
+### PDF Reader
+
+提供了一个 PDF 阅读器，在打开 type 为 .pdf 等类型的文件时会自动打开
+
+### DOC 浏览器(DOC Browser)
+
+提供了一个 DOC 浏览器，在打开 type 为 .doc 等类型的文件时会自动打开
+
+### XLS 浏览器(XLS Browser)
+
+提供了一个 XLS 浏览器，在打开 type 为 .xls 等类型的文件时会自动打开
+
+### PPT 编辑器
+
+提供了一个 PPT 编辑器，在打开 type 为 .ppt 等类型的文件时会自动打开
+
+还可以编辑 PPT
+
+<!--
 ### 系统信息(System Information)
 ### 系统设置(System Settings)
 ### 系统日志(System Log)
